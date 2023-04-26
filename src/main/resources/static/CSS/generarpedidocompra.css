@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Mochiy+Pop+One&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+
+.form1:focus, .form4:focus{
+    box-shadow: 0px 0px 0.35rem rgb(255, 0, 0) !important;
+}
+
+.form2:focus, .form5:focus{
+    box-shadow: 0px 0px 0.35rem rgb(29, 158, 3) !important;
+}
+
+.form3:focus, .form6:focus{
+    box-shadow: 0px 0px 0.35rem rgb(236, 250, 35) !important;
+}
+
+
+
+.conten{
+	padding-top: 60px;
+}
+
+.cabezaregistro{
+	width: 600px;
+	padding: 25px;
+	background-color: rgb(128, 147, 255);
+	font-family: 'Potta One', cursive;
+	border-radius: 10px;
+	border: none;
+
+}
+.cabezaregistro h3{
+	font-size: 25pt;
+}
+
+
+.cuerpo{
+	background-color: rgb(213, 219, 255);
+		padding-top: 20px;
+}
+
+.cuerpo label{
+	font-family: 'Secular One', sans-serif;
+}
+
+
+
+.cuerpoeditar{
+	background-color: bisque;
+		padding-top: 20px;
+}
+
+.cuerpoeditar label{
+	font-family: 'Secular One', sans-serif;
+}
+
+
+
+.footerregistro{
+	padding: 25px;
+	background-color: rgb(128, 147, 255);
+	border-radius: 10px;
+	border: none;
+}
+.boxb{
+	text-align: center;
+}
+.botong{
+	width: 40%;
+	font-size: 14pt;
+	color: white;
+	border: none;
+}
+
+.botong:hover{
+	width: 40%;
+	font-size: 14pt;
+	background-color: darkseagreen;
+	color: black;
+}
+
+
+.botonl{
+	width: 40%;
+	font-size: 14pt;
+	border: none;
+	
+
+}
+
+.botonl:hover{
+	width: 40%;
+	font-size: 14pt;
+	background-color: rgb(115, 220, 255);
+
+}
+
+
+.botona{
+	width: 50%;
+	font-size: 14pt;
+	color: white;
+	border: none;
+	background-color: chocolate;
+}
+
+.botona:hover{
+	width: 50%;
+	font-size: 14pt;
+	color: white;
+	background-color: burlywood;
+	border: none;
+}
+
+
+.botones{
+	padding-left: 140px;
+	font-size: 18pt;
+	font-family: 'Potta One', cursive;
+	
+}
+
+
+.produc{
+	padding: 15px;
+}

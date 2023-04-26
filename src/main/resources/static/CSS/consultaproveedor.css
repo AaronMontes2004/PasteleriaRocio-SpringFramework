@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Mochiy+Pop+One&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+
+
+.contenidodeconsulta{
+	background-color: rgb(255, 234, 234);
+	width: 1200px;
+	border-radius: 8px;
+	height: 1000px;
+
+}
+
+.textconsulta{
+	padding: 40px;
+	font-family: 'Potta One', cursive;
+}
+.botonb{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: darkorange; 
+	border: 2px;
+	color: black;
+
+}
+
+.botonl{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: rgb(54, 201, 98); 
+	color: black;
+	border: 2px;
+	
+}
+
+
+.botonsexcel{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: yellow;
+	color: black;
+	border: 2px;
+}
+
+.botonspdf{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: rgb(164, 164, 164);
+	color: black;
+	border: 2px;
+}
+
+
+
+
+.botonb:hover{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: rgb(255, 190, 111); 
+	color: black;
+}
+
+
+.botonl:hover{
+	width: 250px;
+	background-color: rgb(162, 230, 182); 
+	font-family: 'Ubuntu', sans-serif;
+	color: black;
+	
+}
+
+
+.tabla{
+	color:white;
+	font-family: 'Secular One', sans-serif;
+	
+}
+#palabra{
+	padding-left: 20px;
+	font-family: 'Mochiy Pop One', sans-serif;
+}
+.produc{
+	padding: 10px;
+	font-size: 30pt;
+}
+
+.eliminar{
+	background-color: rgb(255, 128, 128);
+	font-family: 'Potta One', cursive;
+	color: white;
+	
+}
+
+.eliminar:hover{
+	background-color: rgb(255, 181, 181);
+	font-family: 'Potta One', cursive;
+	color: black ;
+	
+}
+
+
+
+
+.contenido{
+	font-size: 12pt;
+	font-family: 'Acme', sans-serif;
+	
+}

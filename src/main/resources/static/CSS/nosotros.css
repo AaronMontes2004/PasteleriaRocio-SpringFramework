@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0;
+}
+
+
+@font-face {
+    font-family: KrinkesDecorPERSONAL;
+    src: url(../fonts/KrinkesDecorPERSONAL.ttf);
+}
+
+@font-face {
+    font-family: Capuche Trial;
+    src: url(../fonts/Capuche\ Trial.otf);
+}
+.titulo{
+    font-family: KrinkesDecorPERSONAL;
+}
+
+.subt{
+    font-family: Capuche Trial;
+    color: black;
+    font-size: 24pt;
+    margin-bottom: 35px;
+    padding-left: 80px;
+}
+
+@font-face {
+    font-family: "Hey Comic";
+    src: url(../fonts/Hey\ Comic.ttf);
+}
+
+@font-face {
+    font-family: Abecedary-Regular;
+    src: url(../fonts/Abecedary-Regular.ttf);
+}
+
+.sub{
+    font-family: "Hey Comic"; 
+}
+
+.sub:hover span{
+    color: rgb(228, 210, 175);
+    text-shadow: 0 0 10px orange;
+}
+
+#btn{
+    font-family: "Hey Comic"; 
+}
+
+.textsub{
+    font-family: Abecedary-Regular;
+    font-size: 18pt;
+}
+
+
+
+main img{
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+@font-face {
+    font-family: Sweety Rasty;
+    src: url(../fonts/Sweety\ Rasty.otf);
+}
+a.avatar{
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+
+.cont-banner{
+    position:absolute;
+    top: 40%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.cont-banner p{
+    text-align: right;
+    font-size: 16pt;
+    color: #000;
+    font-family: 'Potta One', cursive;
+    color: chocolate;
+    padding-left: 750px;
+    animation: maquin 3s infinite alternate;
+}
+
+@keyframes maquin {
+    from{
+        width: 100%;
+    }
+    to{
+        width: 65%;
+    }
+}
+
+.cont-banner h1{
+    font-family: 'Pacifico', cursive;
+    color: white;
+    font-size: 80pt;
+    text-align: right;
+    padding-left: 850px;
+}
+.section{
+    background-image: url(../IMG/SLIDER/contenedor.jpg);
+    width: 100%;
+    height: 1450px;
+}
+
+@font-face {
+    font-family: Pinky Promise;
+    src: url(../fonts/Pinky\ Promise.otf);
+}
+@font-face {
+    font-family: Abecedary-Regular;
+    src: url(../fonts/Abecedary-Regular.ttf);
+}
+@font-face {
+    font-family: KrinkesRegularPERSONAL;
+    src: url(../fonts/KrinkesRegularPERSONAL.ttf);
+}
+
+section h2{
+    font-family: Pinky Promise;
+    text-align: center;
+    color: #000;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size: 50pt;
+}
+section hr{
+    width: 20%;
+    height: 10px;
+    align-items: center;
+    background-color: chocolate;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.contenedores{
+    margin: auto;
+    display: table;
+}
+.contenedores h4{
+    float: left;
+    font-family: 'Preahvihear', sans-serif;
+    position: relative;
+    font-size: 18pt;
+    color: rgb(171, 89, 30);
+}
+
+h4 span{
+    position: absolute;
+    right: 0;
+    width: 0;
+    background-image: url(../IMG/SLIDER/contenedor.jpg);
+    border-left: 1px solid #000;
+    animation: maquina 5s infinite alternate;
+}
+
+@keyframes maquina {
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+}
+
+
+
+.contenedor{
+    text-align: center;
+    font-size: 25pt;
+    padding: 40px;
+}
+.textos{
+    font-family: 'Potta One', cursive;
+    font-size: 16pt;
+    width: 80%;
+    color: #000;
+    padding-top: 50px;
+    padding-left: 350px;
+    padding-right: 60px;
+    text-align: center;
+    padding-bottom: 50px;
+
+}
+.textos p{
+    color: #000;
+}
+
+.wrapper {
+    background: url(../IMG/imgGaleria/nosotrosimg.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 450px;
+    
+}
+.cont-wrapper{
+    width: 80%;
+    margin: auto;
+   
+}
+.cont-wrapper h3{
+    text-align: center;
+    font-family: KrinkesRegularPERSONAL;
+    color: #000;
+    font-size: 40pt;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.cont-wrapper p{
+    font-family: 'Potta One', cursive;
+    text-align: center;
+    color: #000;
+    animation: maquinas 5s infinite alternate steps(120);
+}
+
+@keyframes maquinas {
+    from{
+        width: 100%;
+    }
+    to{
+        width: 85%;
+    }
+}
+
+
+
+.tortanosotros{
+    text-align: center;
+}
+.lugar{
+    background-image: url(../IMG/SLIDER/contenedor.jpg);
+    height: 700px;
+}
+
+.social{
+    margin-top: 30px;
+    padding-left: 1100px;
+}
+.ico{
+    font-size: 18px;
+    background-color: #e4a981;
+    padding: 10px;
+    color: black;
+    border-radius: 50%;
+}
+.ico:hover{
+    background-color: #ff8e42;
+    color: black;
+}
+.torta{
+    margin: auto;
+    padding-top: 350px;
+    text-align: center;
+}
+.icos{
+    font-size: 160px;
+    background-color: #e4a981;
+    padding: 40px;
+    color: black;
+    border-radius: 50%;
+}
+.icos:hover{
+    font-size: 160px;
+    background-color: #ab6e45;
+    padding: 40px;
+    color: black;
+    border-radius: 50%;
+}
+
+
+.subletra{
+    font-family: 'Potta One', cursive;
+    font-size: 14pt;
+    color: rgb(245, 196, 136);
+}
+.subtexto{
+    font-family: 'Secular One', sans-serif;
+    font-size: 13pt;
+    
+   
+}
+.subtexto:hover span{
+    color: orange;
+    text-shadow: 0 0 10px orange;
+    text-shadow: 0 0 20px orange;
+}
+
+.sub:hover span{
+    color: rgb(228, 210, 175);
+    text-shadow: 0 0 10px orange;
+}
+
+.textsub{
+    font-family: Abecedary-Regular;
+    font-size: 18pt;
+    color: white;
+}
+
+
+
+
+/*mediaquery para banner*/
+@media only screen and (max-width:980px) {
+    
+
+  
+ }
+ @media only screen and (max-width:580px) {
+     .banner{
+         width: 255%;
+     }
+     .cont-banner{
+        position:absolute;
+        top: 45%;
+        left: 30%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+    .cont-banner h1{
+        font-family: 'Pacifico', cursive;
+        color: black;
+        font-size: 40pt;
+        text-align: right;
+        padding-left: 850px;
+    }
+    .cont-banner p{
+        text-align: right;
+        font-size: 16pt;
+        font-family: 'Potta One', cursive;
+        color: chocolate;
+        padding-left: 750px;
+        animation: maquin 5s infinite alternate;
+    }
+    
+    @keyframes maquin {
+        from{
+            width: 75%;
+        }
+        to{
+            width: 40%;
+        }
+    }
+    .social{
+        margin-top: 30px;
+        padding-left: 900px;
+    }
+    section{
+        width: 255%;
+    }
+    .textos{
+        font-family: 'Nokora', sans-serif;
+        font-size: 18pt;
+        width: 80%;
+        padding-top: 50px;
+        padding-left: 85px;
+        padding-right: 150px;
+        text-align: center;
+        padding-bottom: 50px;
+    
+    }
+    .contenedor{
+        padding-bottom: 30px;
+    }
+    .wrapper{
+        width: 255%;
+        padding-top: 50px;
+    }
+    .lugar{
+        width: 240%;
+        padding: 20px;
+    }
+    footer{
+        width: 255%;
+    }
+
+      
+  }

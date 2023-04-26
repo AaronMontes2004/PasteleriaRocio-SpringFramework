@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Imagenes</title>
+    <link rel="stylesheet" href="CSS/galeria.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Style/icon.css">
+</head>
+<body>
+    <header>
+        <div class="padre">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(154, 91, 50)">
+              <div class="container-fluid letrass">
+                <a href="" class="avatar" style="background-image: url(IMG/LOGOS/ROCIO)"></a>
+                <a class="titulo navbar-brand px-2 text-white " style="font-weight: 7px; font-size:40px;" href="#">Pasteleria Rocio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0  ms-auto m-x p-4" >
+                     <li class="nav-item">
+                      <a class="sub nav-link active text-white" style="font-weight: 7px; font-size:24px;" aria-current="page" href="Menu"><span>Inicio</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="sub nav-link active text-white" style="font-weight: 7px; font-size:24px;" aria-current="page" href="contactos"><span>Contacto</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="sub nav-link text-white" style="font-weight: 7px; font-size:24px;" href="nosotros"><span>Nosotros</span></a>
+                    </li>
+                    <li class="nav-item dropdown " style="font-weight: 7px; font-size:24px;">
+                      <a class="sub nav-link dropdown-toggle text-white"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Tienda</span>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(163, 104, 64);">
+                          <li><a class="sub dropdown-item" href="/Producto/CategoriaTortasStandard">Estandar</a></li>
+                		  <li><a class="sub dropdown-item" href="#">Eventos</a></li>
+                		  <li><a class="sub dropdown-item" href="/Producto/CategoriaTortasPersonalizadas">Personalizada</a></li>
+                		  
+                      </ul>
+                    </li>
+        
+                    
+                    <li class="nav-item dropdown " style="font-weight: 7px; font-size:24px;">
+                      <a class=" sub nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span>Mi Cuenta</span>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(163, 104, 64);">
+                        <li><a class="sub dropdown-item " href="login">Cuenta</a></li>
+                        <!--<li><a class="dropdown-item " href="#">Pedidos</a></li>-->
+                        <li><a class="sub dropdown-item" href="carritocompras">Carrito de Compra</a></li>
+                        <li><a class="sub dropdown-item" href="ubicacion">Direcciones de Entrega</a></li>
+                        <!--<li><a class="dropdown-item" href="#">Finazalizar Compra</a></li>-->
+                      </ul>
+                    </li>
+                    
+                    <div class="u-pull-right">
+                        <li class="submenu">
+                            <img src="/IMG/imagenesall/carrito-de-compras.png" alt="" id="img-carrito">
+                            <div id="carrito">
+                                <table id="lista-carrito" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th class="car-sup">Imagen</th>
+                                            <th class="car-sup">Nombre</th>
+                                            <th class="car-sup">Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                <a href="#" id="vaciar-carrito" 
+                                class="button u-full-width">Vaciar Carrito</a>
+                                <a href="#" id="realizar-compra" 
+                                class="button u-full-width">Realizar Compra</a>
+                            </div>
+                        </li>
+                      </div>
+                  </ul>
+                  <form class="d-flex" th:action="@{/Buscar}">
+		            <input class="form-control me-2" type="text" name="buscar" id="buscar" th:value="${buscar}" aria-label="Search" required>
+		            <input type="submit" class="btn btn-light" style="background-color: #E5A65E;" id="btn" value="Buscar">
+		          </form>
+                </div>
+              </div>
+            </nav>
+          </div>
+
+    </header>
+    <main id="lista-tortas">
+        <div class="banner">
+            <img src="IMG/imgGaleria/banner3.jpg" alt="">
+
+        </div>
+        <div class="cont-banner">
+            <h1><b>Dulce Arte</b></h1>
+            <p>UNA IMAGEN LO DICE TODO</p>
+            <div class="social">
+                <label class="ico fa-brands fa-facebook"></label>
+                <label class="ico fa-brands fa-twitter"></label>
+                <label class="ico fa-brands fa-instagram"></label>
+            </div>
+        </div>
+    </main>
+    <div class="portafolio" id="portafolio">
+        <h2>MAS DE NUESTROS PASTELES</h2>
+            <hr>
+            <br>
+       <section class="galeria">
+            <a href="#imagen1" alt="">
+                <img src="IMG/imgGaleria/torta01.jpg" alt="">
+            </a>
+            <a href="#imagen2" alt="">
+                <img src="IMG/imgGaleria/torta1.jpg" alt="">
+            </a>
+            <a href="#imagen3">
+                <img src="IMG/imgGaleria/torta10.jpg" alt="">
+            </a>
+            <a href="#imagen4">
+                <img src="IMG/imgGaleria/torta04.jpg" alt="">
+            </a>
+            <a href="#imagen5">
+                <img src="IMG/imgGaleria/torta12.jpg" alt="">
+            </a>
+            <a href="#imagen6">
+                <img src="IMG/imgGaleria/torta06.jpg" alt="">
+            </a>
+            <a href="#imagen7">
+                <img src="IMG/imgGaleria/torta9.jpg">
+            </a>
+            <a href="#imagen8">
+                <img src="IMG/imgGaleria/tortas14.jpg" alt="">
+            </a>
+            <a href="#imagen9">
+                <img src="IMG/imgGaleria/torta01.gif" alt="">
+            </a>
+            <a href="#imagen10">
+                <img src="IMG/imgGaleria/torta8.jpg" alt="">
+            </a>
+            <a href="#imagen11">
+                <img src="IMG/imgGaleria/img01.jpg" alt="">
+            </a>
+            <a href="#imagen12">
+                <img src="IMG/imgGaleria/torta4.jpg" alt="">
+            </a>
+            <a href="#imagen13">
+                <img src="IMG/imgGaleria/torta03.gif" alt="">
+            </a>
+            <a href="#imagen14">
+                <img src="IMG/imgGaleria/torta5.jpg" alt="">
+            </a>
+            <a href="#imagen15">
+                <img src="IMG/imgGaleria/torta2.jpg" alt="">
+            </a>
+            
+         
+           
+       
+
+        </section>
+        <article class="light-box" id="imagen1">
+            <a href="#imagen14" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta01.jpg"  alt="">
+            <a href="#imagen2" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+        
+        <article class="light-box" id="imagen2">
+            <a href="#imagen1" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta1.jpg" alt="">
+            <a href="#imagen3" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+
+        <article class="light-box" id="imagen3">
+            <a href="#imagen2" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta10.jpg" alt="">
+            <a href="#imagen4" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+
+        <article class="light-box" id="imagen4">
+            <a href="#imagen3" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta04.jpg"  alt="">
+            <a href="#imagen5" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+
+        <article class="light-box" id="imagen5">
+            <a href="#imagen4" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta12.jpg" alt="">
+            <a href="#imagen6" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+
+        <article class="light-box" id="imagen6">
+            <a href="#imagen5" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta06.jpg" alt="">
+            <a href="#imagen7" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+
+        <article class="light-box" id="imagen7">
+            <a href="#imagen6" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta9.jpg" alt="">
+            <a href="#imagen8" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+
+        <article class="light-box" id="imagen8">
+            <a href="#imagen7" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/tortas14.jpg" alt="">
+            <a href="#imagen9" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+
+        <article class="light-box" id="imagen9">
+            <a href="#imagen8" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta01.gif" alt="">
+            <a href="#imagen10" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+        <article class="light-box" id="imagen10">
+            <a href="#imagen9" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta8.jpg" alt="">
+            <a href="#imagen11" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+        <article class="light-box" id="imagen11">
+            <a href="#imagen10" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/img01.jpg" alt="">
+            <a href="#imagen12" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+        <article class="light-box" id="imagen12">
+            <a href="#imagen11" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta4.jpg" alt="">
+            <a href="#imagen13" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+        <article class="light-box" id="imagen13">
+            <a href="#imagen12" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta03.gif" alt="">
+            <a href="#imagen14" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+        <article class="light-box" id="imagen14">
+            <a href="#imagen13" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta5.jpg" alt="">
+            <a href="#imagen15" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>      
+        <article class="light-box" id="imagen15">
+            <a href="#imagen14" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta2.jpg" alt="">
+            <a href="#imagen1" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>     
+        <article class="light-box" id="imagen15">
+            <a href="#imagen15" class="next"><span  class="fa-solid fa-circle-arrow-left" style="color:  #fff;"></span></a>
+            <img src="IMG/imgGaleria/torta2.jpg" alt="">
+            <a href="#imagen2" class="next"><span class="fa-solid fa-circle-arrow-right" style="color: #fff;"></span></a>
+            <a href="#portafolio" class="close">X</a>
+        </article>
+    
+    </div>
+    <div class="boton">
+        <a href="/Producto/CategoriaTortasStandard" target="b">
+            <input type="submit" value="VER POR CATEGORIAS" class="descargar">
+        </a>
+
+    </div>
+    <div class="wrapper">
+        <div class="cont-wrapper">
+            <h3><b>Preparacion Artesanal</b></h3>
+            <p>
+                Nos preocupamos por la presentación y el sabor de nuestros productos. Es por esto que usamos ingredientes frescos de alta calidad y cada decoración se hace con mucha dedicación.
+            </p>
+            <p>
+                Nuestras cajas fueron diseñadas elegantes y atractivas y hemos incluido dedicatorias, para que tus detalles sean más especiales, sorprendentes y deliciosos.
+            </p>
+           
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <p>
+                DESARROLLADO POR EL EQUIPO SCRUM
+
+            </p>
+            <div class="socialess">
+                <a href="">
+                    <label class="is fa-brands fa-facebook" ></label>   
+                </a>
+                <a href="">
+                    <label class="is fa-brands fa-instagram" ></label>
+                </a>
+                <a href="">
+                    <label  class="is fa-brands fa-whatsapp" ></label>
+                </a>
+            </div>
+        </div> 
+        <div class="footer">
+            <p>Estudiantes de Desarrollo de Sistemas</p>
+            <div class="logoidat">
+                <img src="IMG/imgGaleria/idat.png" alt="" class="logoid">
+
+            </div>
+        </div>
+        <div class="footer">
+            <p>Programadores y Diseñadores Web</p>
+            <div class="logoidat">
+                <img src="IMG/imgGaleria/perfil.jpg.png" alt="" class="idperfil">
+
+            </div>
+        </div> 
+    </footer>
+
+    <script src="/js/carrito.js"></script>
+    <script src="/js/pedido.js"></script>
+    <script src="https://kit.fontawesome.com/59a2028302.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

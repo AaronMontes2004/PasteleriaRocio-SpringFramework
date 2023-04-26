@@ -1,0 +1,96 @@
+
+
+.submenu{
+    margin-left: 40px;
+    margin-top: 11px;
+    position:relative;
+}
+.submenu #carrito{
+    display:none;
+}
+.submenu:hover #carrito{
+    display:block;
+    position:absolute;
+    right: 0;
+    color:white;
+    top:100%;
+    z-index: 1;
+    background-color: #2A2420;
+    padding: 20px;
+    min-height: 400px;
+    min-width: 300px;
+}
+.vacio{
+    padding:10px;
+    background-color:crimson;
+    text-align:center;
+    border-radius: 10px;
+    color:white;
+}
+
+.info-card{
+    padding: 10px 20px;
+    color:black;
+}
+.info-card p, .card h4{
+    margin-bottom:7px;
+}
+.info-card .precio{
+    text-decoration: line-through;
+    font-size:18px; 
+    margin-top:10px;
+}
+.info-card .precio span{
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#imagenestortas{
+    height: 188px;
+}
+
+#realizarcompra{
+    color:white;
+    background-color:brown;
+}
+
+#realizarcompra:hover{
+    color:rgb(255, 255, 255);
+    background-color:rgb(97, 37, 37)
+}
+#recargarcarrito{
+    color:white;
+    background-color:brown
+}
+#recargarcarrito:hover{
+    color:white;
+    background-color:rgb(97, 37, 37)
+}
+
+#seguircomprando{
+    color:white;
+    background-color:brown;
+    margin-left: 270px;
+
+}
+#seguircomprando:hover{
+    color:white;
+    background-color:rgb(97, 37, 37)
+}
+
+#terminarcompra{
+    color:white;
+    background-color:brown;
+    margin-left: 50px;
+}
+
+#terminarcompra:hover{
+    color:white;
+    background-color:rgb(97, 37, 37);
+
+}
+
+.row input{
+    width:400px;
+}
+

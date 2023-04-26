@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="/CSS/InfoTorta.css">
+    <script src="https://kit.fontawesome.com/c5518553b0.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="/IMG/favicon/favicon.png" type="image/x-icon">
+    <title>Info de la torta</title>
+    <link rel="stylesheet" href="/Style/icon.css">
+</head>
+<body>
+    <header>
+        <div class="padre">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: rgb(163, 104, 64);">
+              <div class="container-fluid letrass">
+                <a href="/" class="avatar" style="background-image: url(/IMG/Logo/ROCIO.png)"></a>
+                <a class="titulo navbar-brand px-2 text-white" style="font-weight: 7px; font-size:30px;" href="/">Pasteleria Rocio</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0  ms-auto m-x p-4" >
+                    <li class="nav-item">
+                      <a class="sub nav-link active text-white" style="font-weight: 7px; font-size:24px;" aria-current="page" href="/contactos"><span>Contacto</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="sub nav-link text-white" style="font-weight: 7px; font-size:24px;" href="/nosotros"><span>Nosotros</span></a>
+                    </li>
+                    <li class="nav-item dropdown " style="font-weight: 7px; font-size:24px;">
+                      <a class="sub nav-link dropdown-toggle text-white"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         <span>Tienda</span>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(163, 104, 64);">
+                        <li><a class="dropdown-item" th:href="@{/Producto/CategoriaTortasStandard}">Estandar</a></li>
+                        <li><a class="dropdown-item" href="#">Eventos</a></li>
+                        <li><a class="dropdown-item" th:href="@{/Producto/CategoriaTortasPersonalizadas}">Personalizada</a></li>
+                      </ul>
+                    </li>
+        
+                    
+                    <li class="nav-item dropdown " style="font-weight: 7px; font-size:24px;">
+                      <a class="sub nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                         <span>Mi Cuenta</span>
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(163, 104, 64);">
+                        <li><a class="dropdown-item " href="/login">Cuenta</a></li>
+                        <!--<li><a class="dropdown-item " href="#">Pedidos</a></li>-->
+                        <li><a class="dropdown-item" href="/carritodecompras">Carrito de Compra</a></li>
+                        <!--<li><a class="dropdown-item" href="#">Finazalizar Compra</a></li>-->
+                      </ul>
+                    </li>
+                    
+                    <div class="u-pull-right">
+                        <li class="submenu">
+                            <img src="/IMG/imagenesall/carrito-de-compras.png" alt="" id="img-carrito">
+                            <div id="carrito">
+                                <table id="lista-carrito" class="u-full-width">
+                                    <thead>
+                                        <tr>
+                                            <th class="car-sup">Imagen</th>
+                                            <th class="car-sup">Nombre</th>
+                                            <th class="car-sup">Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="car"></tbody>
+                                </table>
+                                <a href="#" id="vaciar-carrito" 
+                                class="button u-full-width btn-car">Vaciar Carrito</a>
+                                <a href="#" id="realizar-compra" 
+                                class="button u-full-width btn-car">Realizar Compra</a>
+                            </div>
+                        </li>
+                    </div>
+                  </ul>
+                  <form class="d-flex" th:action="@{/Buscar}">
+		            <input class="form-control me-2" type="text" name="buscar" id="buscar" th:value="${buscar}" aria-label="Search" required>
+		            <input type="submit" class="btn btn-light" style="background-color: #E5A65E;" id="btn" value="Buscar">
+          			</form>
+                </div>
+              </div>
+            </nav>
+          </div>
+    </header>
+    <main class="contenedor-main" id="lista-tortas">
+        <div class="img-form">
+            <div class="img">
+                <div class="effect-overlay">
+                    <img th:src="'/IMAGENES/'+${producto.imagenProducto}" th:alt="${producto.imagenProducto}">
+                </div>
+            </div>
+            <form th:action="@{/GuardarPersonalizado}" th:object="${pp}" class="form" method="post" onsubmit="return validacion();">
+                <h3 th:text="${producto.nombreProducto}"></h3>
+                <h4>Información</h4>
+                <p th:text="${producto.descripcionProducto}">
+                </p>
+                <h2 style="font-size: 27px !important;" th:text="'S/'+${producto.precioProducto}"></h2>
+                <h4>Elige a tu preferencia</h4>
+                <div class="preferencia">
+                    <label>Sabor de Queque:</label><br>
+                        <select th:field="*{cake}" id="cb1" class="txtcake">
+                        	<option value="Seleccionar">Seleccionar</option>
+                            <option value="chocolate">Chocolate</option>
+                            <option value="vainilla" >Vainilla</option>
+                            <option value="fresa" >Fresa</option>
+                        </select><br>
+                    <label>Relleno:</label><br>
+                        <select th:field="*{relleno}" id="cb2" class="txtrelleno">
+                        	<option value="Seleccionar">Seleccionar</option>
+                            <option value="Crema Chantilli">Chantillí</option>
+                            <option value="Masa elastica">Masa elastica</option>
+                            <option value="Glaceado de chocolate">Glaceado de chocolate</option>
+                        </select><br>
+                    <label >Porciones:</label><br>
+                        <select th:field="*{porciones}" id="cb3" class="txtporciones">
+                        	<option value="0">Seleccionar</option>
+                            <option value="6">6</option>
+                            <option value="12">12</option>
+                            <option value="18">18</option>
+                            <option value="24">24</option>
+                        </select><br>
+                    <label>Cantidad:</label><br>
+                    <input style="cursor: text;" type="number" th:field="*{cantidad}" id="cb3" class="ncantidad"><br>
+                    <label>Accesorios (Opcional):</label><br>
+                        <input style="cursor: text;" type="text" th:field="*{accesorio}" id="cb3"><br>
+                    <label>Dedicatoria (Opcional):</label><br>
+                        <input style="cursor: text;" type="text" th:field="*{dedicatoria}" id="cb3"><br>
+                        <!-- TODO ESTO VA DESAPARECER -->
+                        <input style="display: none;" type="" name="nombre" th:field="*{nombre}" th:value="${producto.nombreProducto}" id="cb3">
+                        <input style="display: none;" type="" name="imagen" th:field="*{imagen}" th:value="${producto.imagenProducto}" id="cb3">
+                        <input style="display: none;" type="" name="precio" th:field="*{precio}" th:value="${producto.precioProducto}" id="cb3">
+                        <input style="display: none;" type="" name="idCategoria" th:field="*{idCategoria}" th:value="${producto.idCategoria}" id="cb3">
+                </div>
+                <button type="submit">COMPRAR</button>
+            </form>
+        </div>
+        <div class="relacionados">
+            <h2>Productos relacionados</h2>
+            <div class="division">
+                <div th:each = "aleatorio: ${aleatorios}" class="seccion">
+                    <div class="img-rel">
+                        <img th:src="'/IMAGENES/'+${aleatorio.imagenProducto}" th:alt="'/IMAGENES/'+${aleatorio.imagenProducto}">
+                        <div class="capa">
+                            <button onclick="location.href=this.value" th:value="@{/Producto/InfoTortaPersonalizada/}+${aleatorio.idProducto}">VER DETALLES</button>
+                        </div>
+                    </div>
+                    <h3 th:text="${aleatorio.nombreProducto}" th:title="${aleatorio.nombreProducto}"></h3>
+                    <h4 th:text="'S/'+${aleatorio.precioProducto}"></h4>
+                </div>
+            </div>
+        </div>
+    </main> 
+    <footer class="pt-1 text-center text-lg-start text-muted letrass" style="background-color: #a66832">
+        <section class=""></section>
+        <section class="">
+            <div class="footer-f container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="subletra text-uppercase fw-bold mb-4">Clientes</h6>
+                  		 <p>
+                            <a href="/login" class="subtexto text-reset text-decoration-none bi bi-person-circle"><span>Mi Cuenta</span></a>
+                        </p>
+                        <p>
+                            <a href="/pedidos" class="subtexto text-reset text-decoration-none bi-bag-plus-fill "><span>Pedidos</span></a>
+                        </p>
+                        <p>
+                            <a a href="/carritodecompras" class="subtexto text-reset text-decoration-none bi bi-cart-plus-fill"><span>Carrito de Compra</span></a>
+                        </p>
+                        <p>
+                            <a href="/finalizarcompra" class="subtexto text-reset text-decoration-none bi bi-cart-check-fill"><span>Finalizar Compra</span></a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="subletra text-uppercase fw-bold mb-4">Informacion</h6>
+                  		<p>
+                            <a href="/nosotros" class="subtexto text-reset text-decoration-none bi bi-people-fill" ><span>Nosotros</span></a>
+                        </p>
+                        <p>
+                            <a href="/galeria" class="subtexto text-reset text-decoration-none bi bi-image"><span>Galeria</span></a>
+                        </p>
+                        <p>
+                            <a href="/contactos" class="subtexto text-reset text-decoration-none bi bi-telephone-inbound-fill"><span>Contactanos</span></a>
+                        </p>
+                        <p>
+                            <a href="/politicasdeprivacidad" class="subtexto text-reset text-decoration-none bi bi-shield-fill"><span>Politica de Privacidad</span></a>
+                        </p>
+                        <p>
+                            <a href="/terminosycondiciones" class="subtexto text-reset text-decoration-none bi bi-lock-fill"><span>Terminos y Condiciones</span></a>
+                        </p>
+                        <p>
+                            <a href="#" class="subtexto text-reset text-decoration-none bi bi-geo-alt-fill"><span>Direccion</span></a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="subletra text-uppercase fw-bold mb-4">Contactanos</h6>
+                        <p>
+                            <a href="#!" class="subtexto text-reset text-decoration-none"><span>Whatsapp</span></a>
+                        </p>
+                        <p>
+                            <a href="#!" class="subtexto text-reset text-decoration-none"><span>Correo</span></a>
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="subletra text-uppercase fw-bold mb-4">
+                            Contactanos Directo
+                        </h6>
+                        <p>
+                            <a href="https://web.whatsapp.com/"
+                                class="subtexto text-reset text-decoration-none bi bi-whatsapp">+51 952-252-835</a>
+                        </p>
+                        <p>
+                            <a href="mailto:pasteleriarocio07@gmail.com"
+                                class="subtexto text-reset text-decoration-none bi bi-envelope-fill">pasteleriarocio7@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="footer-f text-center p-4" style="background-color: #a66832">
+            <a class="text-reset fw-bold text-decoration-none" href="#"></a>
+        </div>
+    </footer>
+    <div class="footer-f textsub text-center p-4" style="background-color: rgb(130, 73, 33); height: 100px">
+        Desarrollado por el Grupo © 2022 Copyright:
+        <a class="text-reset fw-bold text-decoration-none" href="#">Pasteleria Rocio</a>
+    </div>
+    <a class="whatsapp"  href="https://web.whatsapp.com/">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="carrito" href="/carritodecompras">
+        <i class="fa-solid fa-cart-plus"></i>
+    </a>
+
+	<script src="/js/VTPersonalizadas.js"></script>
+    <script src="/js/carrito.js"></script>
+    <script src="/js/pedido.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/59a2028302.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

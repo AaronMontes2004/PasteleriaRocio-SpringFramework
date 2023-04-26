@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+ <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO DE USUARIO</title>
+    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="contenedor-login">
+        <!--Slider-->
+        <div class="contenedor-slider">
+            <div class="slider">
+                <!--Slide 1-->
+                <div class="slide fade">
+                    <img src="IMG/SLIDER/slider08.jpg" alt="">
+                    <div class="contenido-slider">
+                    </div>
+                </div>
+
+                <!--Slide 2-->
+                <div class="slide fade">
+                    <img src="IMG/SLIDER/slider07.jpg" alt="">
+
+                    <div class="contenido-slider">
+
+                
+                    </div>
+                </div>
+            </div>
+
+            <!--Botones next y prev-->
+            <a href="#" class="prev"><i class="fas fa-chevron-left"></i><</a>
+            <a href="#" class="next"><i class="fas fa-chevron-right"></i>></a>
+
+            <!--dots-->
+            <div class="dots">
+                <!--<span class="dot active"></span>-->
+            </div>
+        </div>
+          <div class="contenedor-texto">
+
+            <div  class="contenedor-form">
+
+                <h1 class="titutlo">¡Bienvenido a Pasteleria Rocio</h1>
+                <br>
+                <br>
+
+                <p class="descripcion">Ingrese a su cuenta para disfrutar de tus beneficios
+                     y de las mejores promociones que tenemos para tí</p>
+                
+                <!--Tabs-->
+                <ul class="tabs-links">
+                    <li class="tab-link ">
+                    	<a th:href="@{/registro}" style="color: rgb(50, 31, 25);">Registrate ingresando todos los datos</a>
+                    </li>
+                </ul>
+				
+				<form th:action="@{/registro}"  name="addForm" method="post" th:object="${usuario}" id="formLogin" class="formulario active">
+						<div id="alerta"></div>
+						<div th:if=${param.exito}>
+							<div class="alert alert-info">Se ha registrado exitosamente a
+						la aplicación</div>
+						</div>
+						<input
+							id="nombre" type="text" class="input-text" th:field="*{nombre}" placeholder="Nombres Completos" minlength="5" 
+							required    autofocus="autofocus">
+					
+
+				
+						 <input
+							id="apellido" class="input-text" th:field="*{apellido}"  placeholder="Apellidos Completos"
+							required autofocus="autofocus">
+				
+
+					
+						 <input
+							id="email" type="email" class="input-text" th:field="*{email}" placeholder="Correo electrónico"
+							required autofocus="autofocus">
+					
+
+					
+						<input
+							type="password" id="password" class="input-text clave" th:field="*{password}" placeholder="Contraseña" minlength="8" title="POR FAVOR DEBE IMGRESAR SU CONTRASEÑA MINIMO DE 8 CARACTERES POR SU SEGURIDAD"
+							required autofocus="autofocus">
+					
+
+			
+						<button type="submit"  onclick="ValidarFormulario();" class="btn btn-success">Registrar</button>
+						<br>
+						<br>
+						<span style="color: chocolate;">Si estas registrado <a th:href="@{/login}">inicia sesión aqui</a></span>
+					
+				</form>
+		 <script src="js/login.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

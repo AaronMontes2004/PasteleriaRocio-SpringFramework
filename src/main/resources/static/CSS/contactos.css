@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0;
+}
+
+body { 
+    min-height: 100vh;
+    background-image: linear-gradient(-45deg, #ceb28d 50%);
+    background-repeat: no-repeat;
+    font-family: 'Raleway', sans-serif;
+}
+header{
+    width: 100%;
+    height: 70px;
+    background-color: rgb(137, 79, 40);
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+}
+@font-face {
+    font-family: KrinkesDecorPERSONAL;
+    src: url(../fonts/KrinkesDecorPERSONAL.ttf);
+}
+
+@font-face {
+    font-family: Capuche Trial;
+    src: url(../fonts/Capuche\ Trial.otf);
+}
+.titulo{
+    font-family: KrinkesDecorPERSONAL;
+}
+
+.subt{
+    font-family: Capuche Trial;
+    color: black;
+    font-size: 24pt;
+    margin-bottom: 35px;
+    padding-left: 80px;
+}
+
+@font-face {
+    font-family: "Hey Comic";
+    src: url(../fonts/Hey\ Comic.ttf);
+}
+
+@font-face {
+    font-family: Abecedary-Regular;
+    src: url(../fonts/Abecedary-Regular.ttf);
+}
+
+.sub{
+    font-family: "Hey Comic"; 
+}
+
+.sub:hover span{
+    color: rgb(228, 210, 175);
+    text-shadow: 0 0 10px orange;
+}
+
+#btn{
+    font-family: "Hey Comic"; 
+}
+
+.textsub{
+    font-family: Abecedary-Regular;
+    font-size: 18pt;
+}
+
+
+main img{
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+
+.cont-banner{
+    position:absolute;
+    top: 35%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+
+}
+
+
+.cont-banner p{
+    text-align: center;
+    font-size: 16pt;
+    font-family: 'Potta One', cursive;
+    color: chocolate;
+    padding-left: 380px;
+    padding-top: 10px;
+    animation: maquina 5s infinite alternate steps(22);
+}
+
+@keyframes maquina {
+    from{
+        width: 100%;
+    }
+    to{
+        width: 0;
+    }
+}
+
+
+
+.cont-banner h1{
+    font-family: 'Pacifico';
+    color: white;
+    font-size: 50pt;
+    text-align: center;
+    padding-left: 450px;
+    animation: maquina 5s infinite alternate steps(22);
+}
+
+
+section{
+    width: 1200px;
+    margin: auto;
+    padding: 15px;
+    overflow: hidden;
+}
+article{
+    padding-top: 20px;
+    width: 650px;
+    float: left;
+
+}
+aside{
+    padding-top: 20px;
+    width: 350px;
+    float: right;
+}
+hr{
+    width: 50%;
+    height: 3px;
+    border: 0;
+    background-color: rgb(117, 65, 27);
+}
+p{
+    padding-top: 30px;
+}
+article p , h3{
+    padding-left: 40px;
+}
+article p {
+    font-family: 'Nokora', sans-serif;
+    padding-bottom: 30px;
+    padding-top: 8px;
+    font-size: 14pt;
+}
+article li{
+    font-family: 'Nokora', sans-serif;
+    font-size: 14pt;
+    padding-left: 40px;
+    padding-top: 20px;
+}
+@font-face {
+    font-family: "Hey Comic";
+    src: url(../fonts/Hey\ Comic.ttf);
+}
+
+article h3{
+    font-family: "Hey Comic";
+}
+
+.texth{
+	 font-family: "Hey Comic";
+	 font-size: 18pt;
+}
+
+
+@font-face {
+    font-family: "Hello Valentica";
+    src: url(../fonts/Hello\ Valentina.ttf);
+}
+h2{
+    font-family: "Hello Valentica";
+    font-size: 60pt;
+    color: rgb(141, 86, 47);
+}
+aside h3{
+    font-family: "Hello Valentica";
+    font-size: 40pt;
+    color: rgb(141, 86, 47);
+}
+aside hr{
+    width: 90%;
+    height: 3px;
+}
+
+.ico{
+    font-size: 30px;
+    padding: 8px;
+    color: rgb(117, 65, 27);
+    border-radius: 50%;
+    padding-left: 160px;
+}
+
+
+a.avatar{
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+@font-face {
+    font-family: Abecedary-Regular;
+    src: url(../fonts/Abecedary-Regular.ttf);
+}
+input[type="text"]{
+    width: 100%;
+    height: 30px;
+    margin:  10px 0px 10px 0px;
+    border: none;
+    background-color: antiquewhite;
+    padding-left: 10px;
+    font-family: Abecedary-Regular;
+    font-size: 12pt;
+    color: black;
+    
+}
+textarea{
+    width: 100%;
+    background-color: antiquewhite;
+    margin:  10px 0px 10px 0px;
+    padding-left: 10px;
+    border: none;
+    padding-top: 10px;
+}
+input[type="text"]:focus{
+    outline: 0 none;
+
+}
+input[type="submit"]{
+    width: 250px;
+    height: 50px;
+    background:chocolate;
+    margin: auto;
+    padding: 8px;
+    color: black;
+    border-radius: 50px;
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 14pt;
+}
+input[type="submit"]:hover{
+    width: 250px;
+    height: 50px;
+    background-color: rgb(163, 104, 64);
+    margin: auto;
+    padding: 8px;
+    color: black;
+    border-radius: 50px;
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 14pt;
+}
+#boton{
+    padding-left: 50px;
+}
+article a{
+    text-decoration: none;
+    color: chocolate;
+}
+/*footer*/
+footer {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(137, 79, 40);
+    color: #FFFFFF;
+}
+.footer {
+    text-align: left;
+    width: 320px;
+}
+footer p {
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+   
+}
+.socialess{
+    text-align: center;
+    margin-top: 30px;
+}
+.is{
+    font-size: 18px;
+    background: chocolate;
+    padding: 10px;
+    color: white;
+    border-radius: 50%;
+}
+.logoidat{
+    text-align: center;
+    margin-top: 10px;
+
+}
+.logoid{
+    font-size: 18px;
+    background: chocolate;
+    padding: 10px;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+}
+.idperfil{
+    font-size: 18px;
+    background: chocolate;
+    padding: 10px;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+}
+
+
+
+
+
+
+/*mediaquery para banner*/
+@media only screen and (max-width:985px) {
+
+    .banner{
+        width: 145%;
+    }
+    .section{
+        width: 1000px;
+    }
+    article{
+        padding-top: 20px;
+        width: 550px;
+        float: left;
+    
+    }
+    aside{
+        padding-top: 20px;
+        width: 350px;
+        float: right;
+    }
+
+     
+ }
+ @media only screen and (max-width:480px) {
+     header{
+         width: 100%;
+     }
+     .banner{
+        width: 100%;
+     }
+     .cont-banner{
+        position:absolute;
+        top: 25%;
+        left: 8%;
+        transform: translate(-50%, -50%);
+        color: white;
+     }
+
+     .cont-banner h1{
+        font-family: 'Pacifico';
+        color: white;
+        font-size: 25pt;
+        text-align: center;
+        padding-left: 450px;
+        animation: maquina 5s infinite alternate steps(22);
+    }
+     .cont-banner p{
+        text-align: center;
+        font-size: 12pt;
+        font-family: 'Potta One', cursive;
+        color: chocolate;
+        padding-left: 380px;
+        padding-top: 10px;
+        animation: maquina 5s infinite alternate steps(22);
+    }
+    
+    @keyframes maquina {
+        from{
+            width: 90%;
+        }
+        to{
+            width: 0;
+        }
+    }
+
+
+
+
+     section{
+         width: 100%;
+     }
+   
+     article{
+        width: 250px;
+     }
+     article h2{
+        font-size: 30pt;
+     }
+     aside{
+        width: 180px;
+        padding-right: 150px;
+     }
+    aside h3{
+        font-family: "Hello Valentica";
+        font-size: 40pt;
+    }
+    
+      
+  }

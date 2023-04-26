@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+    <link rel="shortcut icon" href="IMG/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="CSS/login.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+	  <script src="https://kit.fontawesome.com/c5518553b0.js" crossorigin="anonymous"></script>
+</head>
+<body>		
+	  <div class="contenedor-login">
+        <!--Slider-->
+        <div class="contenedor-slider">
+            <div class="slider">
+                <!--Slide 1-->
+                <div class="slide fade">
+                    <img src="IMG/SLIDER/slider08.jpg" alt="">
+                    <div class="contenido-slider">
+                    </div>
+                </div>
+
+                <!--Slide 2-->
+                <div class="slide fade">
+                    <img src="IMG/SLIDER/slider07.jpg" alt="">
+
+                    <div class="contenido-slider">
+
+                
+                    </div>
+                </div>
+            </div>
+
+            <!--Botones next y prev-->
+            <a href="#" class="prev"><i class="fas fa-chevron-left"></i><</a>
+            <a href="#" class="next"><i class="fas fa-chevron-right"></i>></a>
+
+            <!--dots-->
+            <div class="dots">
+                <!--<span class="dot active"></span>-->
+            </div>
+        </div>
+          <div class="contenedor-texto">
+
+            <div class="contenedor-form">
+
+                <h1 class="titutlo">¡Bienvenido a Pasteleria Rocio</h1>
+                <br>
+                <br>
+
+                <p class="descripcion">Ingrese a su cuenta para disfrutar de tus beneficios
+                     y de las mejores promociones que tenemos para tí</p>
+                
+                <!--Tabs-->
+                <ul class="tabs-links">
+                    <li class="tab-link active">Iniciar Sesión</li>
+                    <li class="tab-link ">
+                    	<a th:href="@{/registro}" style="color: rgb(50, 31, 25);">Registrate</a>
+                    </li>
+                </ul>
+
+				<form th:action="@{/login}"  name="addFrm" method="post" id="formLogin" class="formulario active">
+					
+					<div id="alerta"></div>
+					<div th:if=${param.logout}>
+						<div class="alert alert-info">Ha cerrado sesión exitosamente</div>
+					</div>
+
+					<input id="username"  name="username" type="text" class="input-text"
+							required autofocus="autofocus" placeholder="Ingrese su email">
+					
+
+					<div class="campo">
+							<input id="password" type="password"  name="password" class="input-text clave" required title="INGRESAR LA CONTRASEÑA ES OBLIGATORIA"
+							autofocus="autofocus" placeholder="Digite su password">
+							<span>Mostrar</span>
+					</div>
+				
+				
+				
+					 <a href="Menu" class ="link" id ="link">Regresar al Menu Principal</a>
+					<input type="submit" class="btn form-control btn btn-primary" name="login-submit" id="login-submit"
+						onclick="ValidarFormulariologin();"	 value="Iniciar sesión" />
+						<!--<label>¿Olvidaste tu contraseña? <a style="text-decoration: none;" href="/RecuperacionDeContrasena">Recuperar</a></label>-->
+						
+					<button type="button" class="recuperar btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">RECUPERAR CONTRASEÑA</button>
+
+						
+				</form>
+				<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						  <div class="modal-dialog">
+						    <div class="modal-content">
+						      <div class="modal-header">
+						        <h5 class="modal-title" id="exampleModalLabel">RECUPERAR CONTRASEÑA DEL USUARIO</h5>
+						        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						      </div>
+						      <div class="modal-body">
+						        <form th:action="@{/Recuperar}" name="addForm">
+						        	<div id="alertar"></div>
+						          <div class="mb-3">
+						            <label for="recipient-name" class="col-form-label">CORREO ELECTRONICO:</label>
+						            <input type="text" class="form-control" id="correo" name="correo" placeholder="Ingrese su email registrado">
+						          </div>
+						          <div class="modal-footer">
+						       		 <button type="submit" class="btn btn-primary" onclick="ValidarRecuperarContra();">ENVIAR CORREO DE RECUPERACION</button>
+						      	</div>
+						        </form>
+						      </div>
+						    
+						    </div>
+						  </div>
+						</div>
+			
+				
+
+		</div>
+
+
+	<!-- Latest compiled and minified JavaScript -->
+	 <script src="js/login.js"></script>
+	 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

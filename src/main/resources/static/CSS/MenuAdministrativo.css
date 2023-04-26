@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Mochiy+Pop+One&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+
+
+
+nav {
+    background-color: rgb(169, 72, 14);
+}
+
+.fondo-img{
+    background-image: url(../IMG/Fondo/fondo_menu_admin.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.fondo-opc{
+    background-color: rgb(203, 86, 16);
+}
+#img-logo{
+    border-radius: 50%;
+    margin-top: auto;
+    margin-bottom: auto;
+    align-self: center;
+}
+
+.titulo{
+	font-family: 'Grand Hotel', cursive;
+	font-size: 30pt;
+}
+.subtitulo{
+	font-family: 'Potta One', cursive;
+	font-size: 14pt;
+	color: black;
+}
+
+
+.subtitulo:hover span{
+    color: rgb(255, 199, 94);
+    text-shadow: 0 0 5px rgb(255, 199, 94);
+    text-shadow: 0 0 10px rgb(255, 199, 94);
+}
+
+.text{
+	font-family: 'Nokora', sans-serif;
+	font-size: 14pt;
+	color: bisque;
+}
+.ico{
+	font-size: 14pt;
+	color: white;
+}
+.subtext{
+	color: black;
+}
+
+.subcate{
+	font-family: 'Preahvihear', sans-serif;
+}
+

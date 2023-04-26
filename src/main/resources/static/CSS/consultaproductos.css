@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Mochiy+Pop+One&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+
+
+.contenidodeconsulta{
+	background-color: bisque;
+	width: 1200px;
+	border-radius: 8px;
+	height: 3380px;
+
+}
+
+.textconsulta{
+	padding-top: 45px;
+	padding-bottom: 20px;
+	font-family: 'Potta One', cursive;
+}
+.botonb{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+
+}
+
+.botonl{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	
+}
+
+
+
+.botonb:hover{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: rgb(135, 206, 235);
+	color: black;
+}
+
+
+.botonl:hover{
+	width: 250px;
+	background-color: darkgray;
+	font-family: 'Ubuntu', sans-serif;
+	color: black;
+	
+}
+
+.botonsexcel{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: yellow;
+	color: black;
+	border: 2px;
+}
+
+
+.botonsexcel:hover{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: yellow;
+	color: black;
+	border: 2px;
+}
+
+.botonspdf{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: red;
+	color: white;
+	border: 2px;
+}
+
+.botonspdf:hover{
+	width: 250px;
+	font-family: 'Ubuntu', sans-serif;
+	background-color: red;
+	color: white;
+	border: 2px;
+}
+
+
+.tabla{
+	color:white;
+	font-family: 'Secular One', sans-serif;
+	
+}
+#palabra{
+	padding-left: 20px;
+	font-family: 'Mochiy Pop One', sans-serif;
+}
+.produc{
+	padding: 10px;
+}
+
+.eliminar{
+	background-color: rgb(255, 128, 128);
+}
+
+
+
+.eliminar:hover{
+	background-color: rgb(255, 181, 181);
+	font-family: 'Potta One', cursive;
+	color: black ;
+	
+}
+
+.contenido{
+	font-size: 12pt;
+	font-family: 'Acme', sans-serif;
+	
+}
+
+.editar{
+	background-color: rgb(46, 188, 46);
+}
+
+
+.editar:hover{
+	background-color: rgb(142, 227, 142);
+	color: black;
+}
+.ingresoboton{
+	text-align: center;
+}
+
+.contenidotabla{
+	padding-left: 20px;
+	padding-right: 20px;
+}

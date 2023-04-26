@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Mochiy+Pop+One&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+
+.contenido{
+	width: 1300px;
+	background-color: bisque;
+	padding: 80px;
+}
+
+.contenido h2{
+	font-family: 'Potta One', cursive;
+	padding-top: 10px;
+}
+.reporte{
+	padding-top: 30px;
+	padding-left: 150px;
+}
+.chart{
+	padding-bottom: 60px;
+	font-family: 'Secular One', sans-serif;
+	}
+	
+#chartdiv{
+	font-family: 'Secular One', sans-serif;
+	color: blue;
+}
+/*Reporte Personalizado*/
+.contenidoperso{
+	width: 1300px;
+	background-color: cornsilk;
+	padding: 80px;
+}
+
+
+.contenidoperso h2{
+	font-family: 'Potta One', cursive;
+	padding-top: 10px;
+}
+

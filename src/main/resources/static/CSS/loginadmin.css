@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Mochiy+Pop+One&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+
+*{
+	box-sizing: border-box;
+}
+body{
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url(../IMG/GALERIA/fondologin05.jpg);
+	background-size: cover;
+	
+	
+}
+.login{
+	background: bisque;
+	width: 400px;
+	height: 650px;
+	border-radius: 5px;
+}
+.image{
+	background: url(../IMG/GALERIA/torta01.jpg);
+	height: 350px;
+	background-size: cover;
+	background-position: center  -90px;
+	display: flex;
+	flex-direction: column;
+	color: white;
+	justify-content: center;
+	align-items: center;
+	clip-path: polygon(0 0,100%  0,100%  90%,50%  100%,0  90%);
+}
+.image::before{
+	content: "";
+	background: rgba(48,48,48,0.28);
+	position: absolute;
+	width: 400px;
+	height: 350px;
+}
+
+
+
+
+
+
+
+
+.ico{
+	font-size: 50pt;
+}
+
+h2,i{
+	position: relative;
+	font-family: 'Potta One', cursive;
+}
+
+.inicio{
+	color: rgb(225, 122, 47);
+}
+
+form{
+	height: 280px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	padding: 0px 15px;
+}
+
+.form-icon{
+	display: flex;
+	flex-direction: column;
+	position: relative;
+}
+
+label,span{
+	color: chocolate;
+	font-family: 'Secular One', sans-serif;
+}
+
+
+.link{
+	
+	color: chocolate;
+	font-family: 'Secular One', sans-serif;
+}
+
+
+span{
+	position: absolute;
+	bottom: 10px;
+	left: 7px;
+}
+
+
+.alertaj{
+	font-family: 'Grand Hotel', cursive;
+	font-size: 14pt;
+	
+}
+input{
+	padding: 7px 7px 7px 45px;
+	background: transparent;
+	border: 0px;
+	border-bottom: 2px solid chocolate;
+	outline: none;
+	transition: 0.2s all ease;
+}
+
+input:focus{
+	border-bottom: 2px solid rgb(227, 132, 62);
+	color: rgb(227, 132, 62);
+}
+
+input:focus + span{
+	color: rgb(227, 132, 62);
+}
+
+button{
+	background-color: chocolate;
+	color: white;
+	padding: 12px;
+	width: 100%;
+	border: 0px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: 0.2s all ease;
+	font-family: 'Potta One', cursive;
+	font-size: 14pt;
+}
+
+.boton{
+	font-family: 'Potta One', cursive;
+}
+button:hover{
+	background-color: rgb(226, 130, 58);
+	color: black;
+	font-family: 'Potta One', cursive;
+}
+
+
+
+
+
+
+
+
+
+

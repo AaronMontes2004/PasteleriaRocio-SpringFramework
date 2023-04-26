@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Mochiy+Pop+One&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+
+.fila{
+ 	padding-left: 1050px;
+ 	padding-top: 15px;
+ 	background-color: rgb(157, 206, 255);
+}
+.subtitulo{
+	text-align: center;
+	font-size: 16pt;
+}
+.links{
+	text-align: right;
+	padding-top: 30px;
+	padding-bottom: 20px;
+	padding-right: 35px;
+	
+}
+.hipers{
+	color: black;
+	font-family: 'Potta One', cursive;
+	width: 20%;
+}
+.contenido{
+	color: rgb(192, 192, 192);
+	padding-left: 10px;
+}
+/*-------------diseño de factura para el envio-------------*/
+
+@font-face {
+    font-family: "Hello Valentica";
+    src: url(../fonts/Hello\ Valentina.ttf);
+}
+
+
+.titulo{
+	 font-family: "Hello Valentica";
+	 font-size: 40pt;
+    color: rgb(141, 86, 47);
+}
+
+.subtexto{
+	font-family: 'Preahvihear', sans-serif;
+	font-size: 14pt;
+}
+
+.cabecera{
+	background-color: chocolate;
+}
+.contenido{
+	font-family: 'Acme', sans-serif;
+}
+
+.mensaje{
+	font-family: 'Potta One', cursive;
+	font-size: 18pt;
+	color: rgb(141, 86, 47);
+	
+}
+
+.text{
+		font-family: 'Preahvihear', sans-serif;
+		font-size: 14pt;
+		color:  black;
+}
+.nombre{
+	font-family: 'Potta One', cursive;
+		font-size: 12pt;
+		color: chocolate;
+}
+
+.localizacion{
+	font-family: 'Acme', sans-serif;
+    font-size: 12pt;
+    color: black;
+}
+
+

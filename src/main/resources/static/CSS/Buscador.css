@@ -1,0 +1,503 @@
+@import url('https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Staatliches&family=Ubuntu&display=swap%27');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+@font-face {
+    font-family: Abecedary-Regular;
+    src: url(/CSS/EstiloLetras/Abecedary-Regular.ttf);
+}
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+.disclaimer{
+    display: none;
+}
+
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: url(../IMG/Fondo/fondo_menu_admin.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/*CABEZERA*/
+a.avatar{
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+
+.letrass{
+    font-family: 'Pacifico', cursive;
+    padding-bottom: 10px;
+    font-size: 18pt;
+}
+
+/*------------------------CUERPO-------------------------*/
+.contenido{
+    padding-top: 5%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    height: auto;
+}
+
+/*Section*/
+/*Article*/
+
+.contenido article{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: relative;
+    margin-left: 0.5%;
+    margin-right: 1%;
+    width: 100%;
+    height: auto;
+    justify-content:center;
+    border-radius: 18px;
+}
+
+@font-face {
+    font-family: "Hey Comic";
+    src: url(../fonts/Hey\ Comic.ttf);
+}
+@font-face {
+    font-family: KrinkesDecorPERSONAL;
+    src: url(../fonts/KrinkesDecorPERSONAL.ttf);
+}
+
+@font-face {
+    font-family: Capuche Trial;
+    src: url(../fonts/Capuche\ Trial.otf);
+}
+.titulo{
+    font-family: KrinkesDecorPERSONAL;
+    font-size: 25pt;
+}
+.sub{
+    font-family: "Hey Comic"; 
+}
+
+
+
+
+.carta{
+    border-radius: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    position: relative;
+    margin: 0.5%;
+    width: 250px;
+    min-height: 300px;
+    height: 400px;
+    max-height: 700px;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.39);
+    box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.438);
+}
+
+.carta .img-transition{
+    border-radius: 18px;
+    margin: 2.5%;
+    overflow: hidden;
+    position: relative;
+    height: 45%;
+}
+
+.carta img{
+    width: 100%;
+    height: 100%;
+}
+/*capa*/
+.carta .img-transition .capa{
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    background-color: rgba(104, 99, 99, 0.5);
+    position: absolute; 
+    opacity: 0;
+}
+
+.carta .img-transition .capa button{
+    font-size: 12px;
+    margin-top: 32%;
+    margin-bottom: 32%;
+    border-radius: 18px;
+    border: none;
+    width: 60%;
+    height: 20%;
+    cursor: pointer;
+    color: white;
+    border: 2px solid transparent;
+    background-color: #212261;
+}
+
+.carta .img-transition .capa button:hover{
+    color: black;
+    background-color: rgb(243, 243, 243);
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    transition-duration: 0.6s;
+
+}
+
+.carta .img-transition .capa:hover {
+    opacity: 1;
+    transition-duration: 0.7s;
+}
+
+.carta .img-transition:hover  > img{
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
+
+.carta a{
+    background-color: rgb(214, 210, 210);
+    cursor: pointer;
+    font-size: 12px;
+    align-self: center;
+    width: 90%;
+    text-align: center;	
+    margin: 2%;
+    height: 12%;
+    border-radius: 18px;
+    border: 2px solid white;
+    position: relative;
+}
+
+.carta a button{
+    width: 100%;
+    height: 100%;
+    border-radius: 18px;
+    border: 2px solid white;
+}
+
+#btn-carrito{
+    background-color:  rgb(209, 87, 47);
+    color: white;
+}
+
+#btn-ver{
+    background: #212261;
+    color: white;
+}
+
+#btn-carrito:hover{
+    color: black;
+    background-color: rgb(243, 243, 243);
+    border: 2px solid rgba(0, 0, 0, 0.7);
+    transition-duration: 0.6s;
+}
+
+#btn-ver:hover{
+    color: black;
+    background-color: rgb(243, 243, 243);
+    border: 2px solid rgba(0, 0, 0, 0.7);
+    transition-duration: 0.6s;
+}
+
+.carta h3{
+    margin-top: 3%;
+    width: 88%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 17px;
+    margin-left: 6%;
+    color: black;
+}
+
+.carta h2{
+    font-size: 20px;
+    margin-top: 3%;
+    margin-left: 6%;
+    margin-bottom: 5%;
+    color: black;
+}
+
+.icon-x{
+    display: none;
+}
+
+.icon-arrow{
+    display: none;
+}
+
+/*FOOTER*/
+
+.footer-f{
+    color: white;
+}
+
+.subletra{
+    font-family: 'Potta One', cursive;
+    font-size: 14pt;
+    color: rgb(245, 196, 136);
+}
+.subtexto{
+    font-family: 'Secular One', sans-serif;
+    font-size: 13pt;
+   
+}
+
+.subtexto:hover span{
+    color: orange;
+    text-shadow: 0 0 10px orange;
+    text-shadow: 0 0 20px orange;
+}
+
+.sub:hover span{
+    color: rgb(228, 210, 175);
+    text-shadow: 0 0 10px orange;
+}
+
+.textsub{
+    font-family: Abecedary-Regular;
+    font-size: 18pt;
+}
+
+/*Iconos flotantes*/
+
+.whatsapp{
+    background-color: rgb(20, 179, 20);
+    position: fixed;
+    width: 66px;
+    height: 66px;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    bottom: 30px;
+    left: 30px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp:hover{
+    background-color: white;
+    color: rgb(20, 172, 20);
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+.carrito{
+    background-color: rgb(209, 87, 47);
+    position: fixed;
+    width: 66px;
+    height: 66px;
+    color: white;
+    text-align: center;
+    font-size: 34px;
+    bottom: 30px;
+    right: 30px;
+    line-height: 66px;
+    border-radius: 100%;
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.4);
+}
+
+.carrito:hover{
+    background-color: white;
+    color: rgb(209, 87, 47);
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+
+.mensaje{
+    display: flex;
+    justify-content: center;
+    margin-top: 45px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+}
+
+.mensaje h1{
+    border-radius: 50px;
+    width: 50%;
+    padding: 100px;
+    border: 2px rgb(0, 0, 0) solid;
+    box-shadow: 2px 2px 10px 5px rgba(0, 0 , 0, 0.5);
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 9px black;
+    background: linear-gradient(45deg, rgb(179, 112, 67) 50%, #a66832 50%);
+}
+
+@media only screen and (max-width:750px){
+    .contenido{
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .contenido section{
+        justify-content: center;
+        z-index: 50;
+        top: 0%;
+        position: absolute;
+        flex-direction: row;
+        margin: 30px;
+        width: 100%;
+        position: absolute;
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .contenido section .opciones{
+        right: 100%;
+        position: fixed;
+        height: auto;
+        width: 100%;
+    }
+
+    .contenido section h3{
+        margin-top: 20px;
+        text-align: center;
+        color: rgb(209, 87, 47);
+    }
+    
+    .contenido section h4{
+        margin-top: 15px;
+        width: 85%;
+        padding-bottom: 10px;
+        border-bottom: none;
+    }
+    
+    .contenido section label{
+        margin-top: 10px;
+        width: 89%;
+        padding-bottom: 10px;
+        color: rgba(0, 0 , 0, 0.5);
+        border-bottom: 1px solid white;
+        cursor: pointer;
+    }
+
+    /*Article sección*/
+
+    .contenido article{
+        justify-content: center;
+        margin: 10px;
+        width: 100%;   
+        margin-left: 0%;
+        margin-right: 0%;
+    }
+
+    .contenido article .carta{
+        margin: 6px;
+        width: 110px;
+        min-height: 220px;
+    }
+
+    .carta .img-transition{
+        border-radius: 18px;
+        margin: 5px;
+        overflow: hidden;
+        position: relative;
+        height: 90px;
+
+    }
+    .carta .img-transition .capa button{
+        font-size: 5px;
+        margin-top: 35%;
+        margin-bottom: 35%;
+    }
+
+    .contenido article .carta h3{
+        margin-top: 5px;
+        font-size: 10px;
+    }
+
+    .contenido article .carta h2{
+        font-size: 13px;
+    }
+
+    .contenido article .carta .btn-c-v{
+        font-size: 6px;
+        align-self: center;
+        width: 90%;
+        text-align: center;
+        padding-top: 0%;
+        padding-bottom: 0%;
+        margin: 2px;
+        height: 32px;
+        border-radius: 18px;
+        border: 2px solid white;
+    }
+
+/*ICONOS*/
+
+    .icon-x{
+        font-size: 30px;
+        text-align: center;
+        top: 12px;
+        right: 12px;
+        position: absolute;
+        display: flex;
+        color: rgb(209, 87, 47);
+    }
+
+    .icon-arrow{
+        text-align: center;
+        z-index: 100;
+        font-size: 40px;
+        display: flex;
+        top: 22%;
+        color: #212261;
+        position: fixed;
+    }
+    .mensaje h1{
+        width: 95%;
+    }
+}
+
+
+@media only screen and (min-width:1500px){
+    .contenido article .carta{
+        width: 300px;
+        height: 500px;
+    }
+    .contenido article .carta .btn-c-v{
+        font-size: 13px;
+        border-radius: 30px;
+    }
+
+    .contenido section .opciones h3{
+        font-size: 24px;
+    }
+
+    .contenido section .opciones h4{
+        font-size: 20px;
+    }
+
+    .contenido section .opciones label{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width:1700px){
+    .contenido article .carta h3{
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width:2000px){
+    .contenido section .opciones h3{
+        font-size: 30px;
+    }
+
+    .contenido section .opciones h4{
+        font-size: 24px;
+    }
+
+    .contenido section .opciones label{
+        font-size: 24px;
+    }
+}

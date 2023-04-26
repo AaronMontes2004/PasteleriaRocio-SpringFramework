@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+
+* {
+    margin: 0; 
+    padding: 0;
+}
+
+body { 
+    min-height: 100vh;
+    background-color: bisque;
+    font-family: 'Raleway', sans-serif;
+}
+@font-face {
+    font-family: KrinkesDecorPERSONAL;
+    src: url(../fonts/KrinkesDecorPERSONAL.ttf);
+}
+
+@font-face {
+    font-family: Capuche Trial;
+    src: url(../fonts/Capuche\ Trial.otf);
+}
+.titulo{
+    font-family: KrinkesDecorPERSONAL;
+}
+.dropdown-menu li{
+    height: 33px;
+    font-size: 1.8em;
+    text-align: center;
+}
+.nav-item{
+    margin-left: 10px;
+}
+
+.d-flex{
+    margin-right: 20px;
+    margin-top: 22px;
+    width:300px;
+}
+
+.subt{
+    font-family: Capuche Trial;
+    color: black;
+    font-size: 24pt;
+    margin-bottom: 35px;
+    padding-left: 80px;
+}
+
+@font-face {
+    font-family: "Hey Comic";
+    src: url(../fonts/Hey\ Comic.ttf);
+}
+
+@font-face {
+    font-family: Abecedary-Regular;
+    src: url(../fonts/Abecedary-Regular.ttf);
+}
+
+.sub{
+    font-family: "Hey Comic"; 
+}
+
+.sub:hover span{
+    color: rgb(228, 210, 175);
+    text-shadow: 0 0 10px orange;
+}
+#btn{
+    font-family: "Hey Comic"; 
+}
+
+.textsub{
+    font-family: Abecedary-Regular;
+    font-size: 18pt;
+}
+a.avatar{
+    height: 100px;
+    width: 100px;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    border-radius: 50%;
+    background-size: 100% auto;
+}
+main img{
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+.cont-banner{
+    position:absolute;
+    top: 35%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+.cont-banner p{
+    text-align: center;
+    font-size: 16pt;
+    font-family: 'Potta One', cursive;
+    color: chocolate;
+    padding-left: 690px;
+    padding-top: 20px;
+}
+#secventas{
+    font-size: 19pt;
+    font-family: 'Potta One', cursive;
+    color: darkred;
+    padding-left: 770px;
+    padding-top: 20px;
+}
+
+
+.cont-banner h1{
+    font-family: 'Pacifico';
+    color: black;
+    font-size: 50pt;
+    text-align: center;
+    padding-left: 680px;
+    padding-top: 350px;
+}
+.barra{
+    width: 100%;
+    background-color: rgb(171, 115, 75);
+    height: 50px;
+}
+.posicion{
+    float: right;
+    padding-right: 100px;
+}
+.barra ul{
+    list-style: none;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.barra li{
+    display: inline-block;
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 14pt;
+
+}
+.barra a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding: 8px;
+}
+hr{
+    width: 60%;
+    height: 3px;
+    align-items:center;
+    background-color: chocolate;
+    display: block;
+    unicode-bidi: isolate;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    overflow: hidden;
+    border-style: inset;
+    border-width: 1px;
+}
+h2{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-size: 25pt;
+    font-family: 'Pacifico', cursive;
+}
+.boton{
+    text-align: center;
+}
+#botonvolver{
+    width: 250px;
+    height: 40px;
+    background-color:rgb(197, 113, 53);
+    border-radius: 25px;
+    text-align: center;
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 12pt;
+}
+#botonvolver:hover{
+    width: 250px;
+    height: 40px;
+    background-color:rgb(220, 155, 109);
+    border-radius: 25px;
+    text-align: center;
+    font-family: 'Preahvihear', sans-serif;
+    font-size: 12pt;
+    cursor: pointer;
+}
+.raya{
+    text-align: center;
+    padding-left: 680px;
+}
+
+.social{
+    padding-top: 50px;
+    padding-left: 900px;
+}
+
+.ico{
+    font-size: 22px;
+    background-color: #e4a981;
+    padding: 10px;
+    color: black;
+    border-radius: 50%;
+}
+.cont-metodos {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 100px;
+}
+.cont-iconos {
+    width: 250px;
+    margin: 15px;
+}
+.contenedor {
+    text-align: center;
+}
+.icons{
+    font-size: 25px;
+}
+.contenedor h3{
+    padding-bottom: 10px;
+    font-family: "Ubuntu";
+    font-size: 18pt;
+}
+.contenedor p{
+    color: rgb(112, 69, 39);
+    font-family: 'Nokora', sans-serif;
+
+}
+
+footer {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgb(137, 79, 40);
+    color: #FFFFFF;
+}
+.footer {
+    text-align: left;
+    width: 320px;
+}
+footer p {
+    font-size: 18px;
+    line-height: 30px;
+    text-align: center;
+    font-family: 'Secular One', sans-serif;
+   
+}
+.socialess{
+    text-align: center;
+    margin-top: 30px;
+}
+.is{
+    font-size: 18px;
+    background: chocolate;
+    padding: 10px;
+    color: white;
+    border-radius: 50%;
+}
+.logoidat{
+    text-align: center;
+    margin-top: 10px;
+
+}
+.logoid{
+    font-size: 18px;
+    background: chocolate;
+    padding: 10px;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+}
+.idperfil{
+    font-size: 18px;
+    background: chocolate;
+    padding: 10px;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+}
+
+
+
+
+
+
+/*mediaquery para banner*/
+@media only screen and (max-width:1000px) {
+ 
+    .cont-banner{
+        position:absolute;
+        top: 20%;
+        left: 20%;
+        transform: translate(-50%, -50%);
+        color: white;
+    }
+
+    .cont-banner p{
+        text-align: center;
+        font-size: 11pt;
+        font-family: 'Potta One', cursive;
+        color: chocolate;
+        padding-left: 690px;
+        padding-top: 20px;
+    }
+
+    .social{
+        padding-top: 50px;
+        padding-left: 720px;
+    }
+    
+    .ico{
+        font-size: 22px;
+        background-color: #e4a981;
+        padding: 5px;
+        color: black;
+        border-radius: 50%;
+    }
+     
+ }
+ @media only screen and (max-width:480px) {
+     .banner{
+        width: 150%;
+        display: block;
+        margin: auto;
+     }
+     .cont-banner{
+        position:absolute;
+        top: 8%;
+        left: 8%;
+        transform: translate(-50%, -50%);
+        color: white;
+     }
+
+
+     .cont-banner p{
+        text-align: center;
+        font-size: 10pt;
+        font-family: 'Potta One', cursive;
+        color: chocolate;
+        padding-left: 690px;
+        padding-top: 20px;
+    }
+     
+    .cont-banner h1{
+    font-family: 'Pacifico';
+    color: black;
+    font-size: 30pt;
+    text-align: center;
+    padding-left: 680px;
+    padding-top: 350px;
+    }   
+
+    .social{
+        padding-top: 50px;
+        padding-left: 600px;
+    }
+    .barra{
+        width: 150%;
+    }
+    .section{
+        width: 150%;
+    }
+    .boton{
+        padding-left: 150px;
+    }
+    .section h2{
+        text-align: center;
+        padding-left: 150px;
+    }
+    .cont-metodos{
+        padding-left: 120px;
+    }
+    .text{
+        padding-left: 150px;
+    }
+      
+  }
+  

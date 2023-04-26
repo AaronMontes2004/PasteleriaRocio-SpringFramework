@@ -1,0 +1,47 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Alfa+Slab+One&family=Cabin:ital@1&family=Grand+Hotel&family=Josefin+Sans:ital,wght@1,600&family=Lobster&family=Mochiy+Pop+One&family=Montserrat+Alternates&family=Nokora&family=Overpass&family=Pacifico&family=Potta+One&family=Preahvihear&family=Secular+One&family=Staatliches&family=Ubuntu&display=swap');
+.texto{
+	padding: 10px;
+	font-family: 'Potta One', cursive;
+}
+
+.boton{
+	width: 90%;
+	background-color: chocolate;
+		font-family: 'Potta One', cursive;
+}
+
+.boton:hover{
+	background-color: rgb(228, 136, 67);
+	color: black;
+}
+
+
+
+.contb{
+	padding: 20px;
+	text-align: center;
+	
+}
+label{
+	font-family: 'Secular One', sans-serif;
+}
+.content{
+	background-color: rgb(255, 244, 227);
+}
+.lista{
+		font-family: 'Secular One', sans-serif;
+}
+.text{
+	padding: 10px;
+	font-family: 'Potta One', cursive;
+	color: chocolate;
+}
+.link{
+	padding: 8px;
+}
+.hiper{
+	color: rgb(255, 0, 128);
+	text-decoration: none;
+	font-family: 'Mochiy Pop One', sans-serif;
+}

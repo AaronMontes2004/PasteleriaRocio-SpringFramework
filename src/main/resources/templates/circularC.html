@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+        <link href="/CSS/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" href="/CSS/MenuAdministrativo.css">
+          <link rel="stylesheet" href="/CSS/grafico.css">
+        <link rel="shortcut icon" href="/IMG/favicon/favicon.png" type="image/x-icon">
+        <script src="https://kit.fontawesome.com/c5518553b0.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<title>Graficos Circulares</title>
+<style>
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}
+#chartdivL {
+  width: 100%;
+  height: 500px;
+}
+</style>
+</head>
+<body>
+	              <nav class="sb-topnav navbar navbar-expand navbar-dark">
+            <button class="btn btn-link mx-1 me-4 me-lg-0" style="font-size: 1.4rem;" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <a class="titulo navbar-brand ps-3">Pasteleria Rocio</a>
+            <ul class="navbar-nav ms-auto ms-md-auto me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 1.5rem;">AdminRocio<i class="fa-solid fa-user-gear"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Configuración</a></li>
+                        <li><a class="dropdown-item" onclick="salir()" href="/loginadmin">Cerrar Sesión</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark fondo-opc" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav d-flex flex-column">
+                            <div class="text sb-sidenav-menu-heading">ADMINISTRACIÓN DE DATOS</div>
+                            <a class="subtitulo nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#productos" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="ico fa-solid fa-cake-candles"></i></div>
+                                <span style="color: rgb(255, 193, 132);">Productos</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" style="background-color: rgb(169, 72, 14);" id="productos" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav" style="background-color: rgb(254, 163, 61);">
+                                    <a class="nav-link" th:href="@{/Producto/RegistroDeProducto}"><span style="color: black;" class="subcate"><b>Registro Productos</b></span></a>
+                                    <a class="nav-link" th:href="@{/Producto/ConsultaDeProducto}"><span style="color: black;" class="subcate"><b>Consulta Productos</b></span></a>
+                                    <a class="nav-link" th:href="@{/ProductoPersonalizado/Personalizado}"><span style="color: black;" class="subcate"><b>Producto Personalizado</b></span></a>
+                                </nav>
+                            </div>
+                           <a class="subtitulo nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#factura" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="ico fa-solid fa-file-invoice-dollar"></i></div>
+                                <span style="color: rgb(255, 193, 132);">Venta</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" style="background-color: rgb(169, 72, 14);" id="factura" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" style="background-color: rgb(254, 163, 61);" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" th:href="@{/DetallePedido/ConsultaDetallePedido}" >
+                                        <span style="color: black;" class="subcate"><b> Consulta Pedido Venta</b></span>
+                                    </a>
+                                </nav>
+                            </div>
+                            <a class="subtitulo nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#almacen" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="ico fa-solid fa-store"></i></div>
+                                <span style="color: rgb(255, 193, 132);">Almacen</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="almacen" style="background-color: rgb(169, 72, 14);" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages" style="background-color: rgb(254, 163, 61);">
+                                    <a class="nav-link collapsed" th:href="@{/Almacen/RegistroAlmacen}">
+                                        <span style="color: black;" class="subcate"><b> Registro Almacen</b></span>
+                                    </a>
+                                    <a class="nav-link collapsed" th:href="@{/Almacen/ConsultaAlmacen}">
+                                        <span style="color: black;" class="subcate"><b>Consulta  Almacen</b></span>
+                                    </a>
+                                </nav>
+                            </div>
+                            
+                           <a class="subtitulo nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#compra" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="ico fa-solid fa-file-invoice-dollar"></i></div>
+                                <span style="color: rgb(255, 193, 132);">Compra</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                           <div class="collapse" style="background-color: rgb(169, 72, 14);" id="compra" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" style="background-color: rgb(254, 163, 61);" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" th:href="@{/PedidoCompra/index}" >
+                                        <span style="color: black;" class="subcate"><b>Consulta Pedido Compra</b></span>
+                                    </a>
+                                    <a class="nav-link collapsed" th:href="@{/PedidoCompra/nuevo}">
+                                        <span style="color: black;" class="subcate"><b>Generar Pedido Compra</b></span>
+                                    </a>
+                                </nav>
+                            </div>
+
+                            
+                            <!--<div class="sb-sidenav-menu-heading">Addons</div>-->
+                            <a class=" subtitulo nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#clientes" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="ico fa-solid fa-person-breastfeeding"></i></div>
+                                 <span style="color: rgb(255, 193, 132);">Cliente</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="clientes" style="background-color: rgb(169, 72, 14);" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" style="background-color: rgb(254, 163, 61);" id="sidenavAccordionPages">
+                                   
+                                    <a class="nav-link collapsed" th:href="@{/Cliente/ConsultaDeClientes}" >
+                                        <span style="color: black;" class="subcate"><b> Consulta  Cliente</b></span>
+                                    </a>
+                                </nav>
+                            </div>
+                            <a class="subtitulo nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#proveedor" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="ico fa-solid fa-boxes-packing"></i></div>
+                                <span style="color: rgb(255, 193, 132);">Proveedor</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" style="background-color: rgb(169, 72, 14);" id="proveedor" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" style="background-color: rgb(254, 163, 61);" id="sidenavAccordionPages">
+                                    <a class="subtext nav-link" th:href="@{/Proveedor/RegistroDeProveedor}">
+                                        <span style="color: black;" class="subcate"><b> Registro Proveedor</b></span>
+                                    </a>
+                                    <a class="subtext nav-link" th:href="@{/Proveedor/ConsultaDeProveedor}">
+                                          <span style="color: black;" class="subcate"><b> Consulta Proveedor</b></span>
+                                    </a>
+                                </nav>
+                            </div>
+                            <a class="subtitulo nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#empleado" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="ico fa-solid fa-user-group"></i></div>
+                                <span style="color: rgb(255, 193, 132);">Empleado</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" style="background-color: rgb(169, 72, 14);" id="empleado" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" style="background-color: rgb(254, 163, 61);" id="sidenavAccordionPages">
+                                    <a class="subtext nav-link" th:href="@{/listar}">
+                                        <span style="color: black;" class="subcate"><b>Listado de Empleado</b></span>
+                                    </a>
+                                  
+                                </nav>
+                            </div>
+                               <a class="subtitulo nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#dashboard" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="ico fa-solid fa-chart-line"></i></div>
+                                <span style="color: rgb(255, 193, 132);">DashBoard</span>
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" style="background-color: rgb(169, 72, 14);" id="dashboard" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" style="background-color: rgb(254, 163, 61);" id="sidenavAccordionPages">
+                                    <a class="subtext nav-link" th:href="@{/indexd}">
+                                        <span style="color: black;" class="subcate"><b>DashBoardVenta</b></span>
+                                    </a>
+                                    <a class="subtext nav-link" th:href="@{/indexdcompra}">
+                                        <span style="color: black;" class="subcate"><b>DashBoardCompra</b></span>
+                                    </a>
+                                 
+                                
+                                </nav>
+                            </div>
+                            
+                            <a class="subtitulo nav-link collapsed" style="position: absolute; bottom: 0; margin-bottom: 0.5rem;" href="/loginadmin" >
+                                <div class="sb-nav-link-icon" style="font-size: 1rem;"><i class="fa-solid fa-right-from-bracket"></i></div>
+                                <span href="/loginadmin" onclick="salir()"  style="color: rgb(255, 193, 132);">Salir</span>   
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+
+            <div id="layoutSidenav_content" class="fondo-img">
+            <div class="reporte">
+            	<div class="contenido">
+            	<h2>Reportes con Grafica Circular de Insumos</h2>
+                <div class="chart">
+                	<div id="chartdiv"   style="padding-top: 40px; padding-bottom: 50px;"></div>
+                </div>
+                <h2>Grafico de Area de la Compra de Insumos </h2>
+                <div> 
+                	<div id="chartdivL" class="chart"   ></div>
+                </div>
+            </div>
+            </div>
+            </div>
+        </div>
+	
+	
+	
+	
+	
+	
+	
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+<script src="/js/scripts.js"></script>
+<script src="/js/admin.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="/assets/demo/chart-area-demo.js"></script>
+<script src="/assets/demo/chart-bar-demo.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/percent.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+<!-- Chart code -->
+<script>
+am5.ready(function() {
+
+var root = am5.Root.new("chartdiv");
+
+root.setThemes([
+  am5themes_Animated.new(root)
+]);
+
+
+var chart = root.container.children.push(
+  am5percent.PieChart.new(root, {
+    endAngle: 270
+  })
+);
+
+var series = chart.series.push(
+  am5percent.PieSeries.new(root, {
+    valueField: "value",
+    categoryField: "category",
+    endAngle: 270
+  })
+);
+
+series.states.create("hidden", {
+  endAngle: -90
+});
+
+series.data.setAll([{
+  category: "Elevadura",
+  value: 15
+}, {
+  category: "Huevos",
+  value: 20
+}, {
+  category: "Harina",
+  value: 15
+},  {
+  category: "Leche",
+  value: 31
+},
+ {
+  category: "Chocolate",
+  value: 8
+},
+ {
+  category: "Manjar Blanco",
+  value: 20
+},
+ {
+  category: "Vainilla",
+  value: 5
+},
+{
+  category: "Mantequilla",
+  value: 4
+}, {
+  category: "Azucar",
+  value: 30
+}, {
+  category: "Fresas",
+  value: 20
+}, {
+  category: "Lucuma",
+  value: 35
+},{
+  category: "Naranja",
+  value: 20
+},
+{
+  category: "Chocolate Blanco",
+  value: 8
+},{
+  category: "Galletas de Oreo",
+  value: 10
+},
+{
+  category: "Choco Chips",
+  value: 18
+},
+{
+  category: "Mermelada de Fresa",
+  value: 10
+},
+{
+  category: "Mermelada de Durazno",
+  value: 25
+},
+{
+  category: "Guanabana",
+  value: 20
+},
+{
+  category: "Doña Pepa",
+  value: 30
+},
+{
+  category: "Chin Chin",
+  value: 5
+},
+]);
+
+series.appear(1000, 100);
+
+});
+</script>
+<!-- segunda grafica -->
+<script>
+am5.ready(function() {
+
+var root = am5.Root.new("chartdivL");
+root.setThemes([
+  am5themes_Animated.new(root)
+]);
+
+var chart = root.container.children.push(am5xy.XYChart.new(root, {
+  panX: true,
+  panY: true,
+  wheelX: "panX",
+  wheelY: "zoomX",
+  layout: root.verticalLayout,
+  pinchZoomX:true
+}));
+
+var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+  behavior: "none"
+}));
+cursor.lineY.set("visible", false);
+
+var colorSet = am5.ColorSet.new(root, {});
+
+// The data
+var data = [
+  {
+    year: "2018",
+    value: 185,
+    strokeSettings: {
+      stroke: colorSet.getIndex(0)
+    },
+    fillSettings: {
+      fill: colorSet.getIndex(0),
+    },
+    bulletSettings: {
+      fill: colorSet.getIndex(0)
+    }
+  },
+  {
+    year: "2019",
+    value: 125,
+    bulletSettings: {
+      fill: colorSet.getIndex(0)
+    }
+  },
+  {
+    year: "2020",
+    value: 105,
+    bulletSettings: {
+      fill: colorSet.getIndex(0)
+    }
+  },
+  {
+    year: "2021",
+    value: 220,
+    bulletSettings: {
+      fill: colorSet.getIndex(0)
+    }
+  },
+  {
+    year: "2022",
+    value: 150,
+    strokeSettings: {
+      stroke: colorSet.getIndex(3)
+    },
+    fillSettings: {
+      fill: colorSet.getIndex(3),
+    },
+    bulletSettings: {
+      fill: colorSet.getIndex(3)
+    }
+  },
+  
+];
+
+// Create axes
+// https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+var xRenderer = am5xy.AxisRendererX.new(root, {});
+xRenderer.grid.template.set("location", 0.5);
+xRenderer.labels.template.setAll({
+  location: 0.5,
+  multiLocation: 0.5
+});
+
+var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, {
+  categoryField: "year",
+  renderer: xRenderer,
+  tooltip: am5.Tooltip.new(root, {})
+}));
+
+xAxis.data.setAll(data);
+
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+  maxPrecision: 0,
+  renderer: am5xy.AxisRendererY.new(root, {})
+}));
+
+var series = chart.series.push(am5xy.LineSeries.new(root, {
+  xAxis: xAxis,
+  yAxis: yAxis,
+  valueYField: "value",
+  categoryXField: "year",
+  tooltip: am5.Tooltip.new(root, {
+    labelText: "{valueY}",
+    dy:-5
+  })
+}));
+
+series.strokes.template.setAll({
+  templateField: "strokeSettings",
+  strokeWidth: 2
+});
+
+series.fills.template.setAll({
+  visible: true,
+  fillOpacity: 0.5,
+  templateField: "fillSettings"
+});
+
+
+series.bullets.push(function() {
+  return am5.Bullet.new(root, {
+    sprite: am5.Circle.new(root, {
+      templateField: "bulletSettings",
+      radius: 5
+    })
+  });
+});
+
+series.data.setAll(data);
+series.appear(1000);
+
+// Add scrollbar
+// https://www.amcharts.com/docs/v5/charts/xy-chart/scrollbars/
+chart.set("scrollbarX", am5.Scrollbar.new(root, {
+  orientation: "horizontal",
+  marginBottom: 20
+}));
+
+// Make stuff animate on load
+// https://www.amcharts.com/docs/v5/concepts/animations/
+chart.appear(1000, 100);
+
+}); 
+</script>
+
+
+
+	
+
+</body>
+</html>

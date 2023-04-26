@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/CSS/CategoriaProductos.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css" />
+    <script src="https://kit.fontawesome.com/c5518553b0.js" crossorigin="anonymous"></script>
+    <script src="/js/CategoriaProductosPersonalizadas.js"></script>
+    <link rel="shortcut icon" href="/IMG/favicon/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/Style/icon.css">
+    <title>Tortas Personalizadas</title>
+</head>
+
+<body>
+    <header>
+    <!--ENCABEZADO DE LA PAGINA-->
+  <div class="padre">
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #a66832;">
+      <div class="container-fluid letrass">
+        <a href="/" class="avatar" style="background-image: url(../IMG/LOGOS/ROCIO)"></a>
+        <a class="titulo navbar-brand px-2 text-white " style="font-weight: 7px; font-size:40px;" href="/">Pasteleria Rocio</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0  ms-auto m-x p-4" >
+          	 <li class="nav-item">
+              <a class="sub nav-link active text-white" style="font-weight: 7px; font-size:24px;" aria-current="page" href="../index"><span>Inicio</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="sub nav-link active text-white" style="font-weight: 7px; font-size:24px;" aria-current="page" href="../contactosR"><span>Contacto</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="sub nav-link text-white" style="font-weight: 7px; font-size:24px;" href="../nosotrosR"><span>Nosotros</span></a>
+            </li>
+            <li class="nav-item dropdown " style="font-weight: 7px; font-size:24px;">
+              <a class="sub nav-link dropdown-toggle text-white"  href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span>Tienda</span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(163, 104, 64);">
+                <li><a class="sub dropdown-item" href="/Producto/CategoriaTortasStandardU">Estandar</a></li>
+                <li><a class="sub dropdown-item" href="#">Eventos</a></li>
+                <li><a class="sub dropdown-item" href="/Producto/CategoriaTortasPersonalizadasU">Personalizada</a></li>
+              </ul>
+            </li>
+
+            
+             <li class="nav-item dropdown " style="font-weight: 7px; font-size:24px;">
+                <a class=" sub nav-link dropdown-toggle text-white bi bi-person "   style="font-weight: 7px; font-size:24px;" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span sec:authentication="principal.username"></span>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: rgb(163, 104, 64);">
+				<li sec:authorize="isAuthenticated()"><a class="sub dropdown-item" href="../Menu">Cerrar Sesion</a></li>
+				  <li><a class="sub dropdown-item" href="/carritodecomprasR">Carrito de Compra</a></li>
+              </ul>
+            </li>
+            <div class="u-pull-right">
+              <li class="submenu">
+                  <img src="/IMG/imagenesall/carrito-de-compras.png" alt="" id="img-carrito">
+                  <div id="carrito">
+                      <table id="lista-carrito" class="u-full-width">
+                          <thead>
+                              <tr>
+                                  <th>Imagen</th>
+                                  <th>Nombre</th>
+                                  <th>Precio</th>
+                                  <th></th>
+                              </tr>
+                          </thead>
+                          <tbody></tbody>
+                      </table>
+                      <a href="#" id="vaciar-carrito" 
+                      class="button u-full-width">Vaciar Carrito</a>
+                      <a href="#" id="realizar-compra" 
+                      class="button u-full-width">Realizar Compra</a>
+                  </div>
+              </li>
+            </div>
+          </ul>
+          <form class="d-flex" th:action="@{/Buscar}">
+            <input class="form-control me-2 boton" type="text" name="buscar" id="buscar" th:value="${buscar}" aria-label="Search" required>
+            <input type="submit" class="btn btn-light boton" style="background-color: #E5A65E;" id="btn" value="Buscar">
+          </form>
+        </div>
+      </div>
+    </nav>
+  </div>
+    </header>
+    <main>
+        <div class="contenido" id="lista-tortas">
+            <div id="principio"></div>
+            <a class="icon-arrow" id="i-arrow" onclick="mostrar_form()"><i
+                    class="fa-solid fa-square-caret-right"></i></a>
+            <section>
+                <div class="opciones" id="opc">
+                    <h3>Categoria de pasteles</h3>
+                    <h4>Tortas Personalizadas</h4>
+                    <label onclick="tortas_mayordeedad()" id="t-mayordeedad" style="color: rgb(209, 87, 47)">18 años</label>
+                    <label onclick="tortas_babyshower()" id="t-bb">Babyshower</label>
+                    <label onclick="tortas_cumpleanos()" id="t-cumple">Cumpleaños</label>
+                    <label onclick="tortas_infantil()" id="t-i">Infantiles</label>
+                    <label onclick="tortas_quince()" id="t-15" style="margin-bottom: 10%">15 años</label>
+                    <a class="icon-x" onclick="cerrar_form()"><i class="fa-solid fa-circle-xmark"></i></a>
+                </div>
+            </section>
+            <article id="tortas-mayordeedad">
+                <div class="carta" th:each="producto: ${productosP}" th:if="${producto.idCategoria == 7}">
+                    <div class="img-transition">
+                        <img th:src="@{'/IMAGENES/'+${producto.imagenProducto}}" th:alt="${producto.imagenProducto}" />
+                        <div class="capa">
+                            <button>COMPRAR</button>
+                        </div>
+                    </div>
+                    <h3 th:text="${producto.nombreProducto}" th:title="${producto.nombreProducto}"></h3>
+                    <h2 class="precio">S/<span th:text="${producto.precioProducto}"></span></h2>
+                    <a th:href="@{/Producto/InfoTortaPersonalizadaU/}+${producto.idProducto}"><button class="btn-c-v"
+                            id="btn-ver">PERSONALIZAR</button></a>
+                    <a><button onclick="AnimacionAgregar();" class="agregacion agregar-carrito btn-c-v" id="btn-carrito" th:data-id="${producto.idProducto}">AGREGAR AL CARRITO</button></a>
+                </div>
+            </article>
+
+            <!--*******************TORTAS MEDIANAS***********************-->
+
+			<article id="tortas-bb" style="display: none;">
+                <div class="carta" th:each="producto: ${productosP}" th:if="${producto.idCategoria == 8}">
+                    <div class="img-transition">
+                        <img th:src="@{'/IMAGENES/'+${producto.imagenProducto}}" th:alt="${producto.imagenProducto}" />
+                        <div class="capa">
+                            <button>COMPRAR</button>
+                        </div>
+                    </div>
+                    <h3 th:text="${producto.nombreProducto}" th:title="${producto.nombreProducto}"></h3>
+                    <h2 class="precio">S/<span th:text="${producto.precioProducto}"></span></h2>
+                    <a th:href="@{/Producto/InfoTortaPersonalizada/}+${producto.idProducto}"><button class="btn-c-v"
+                            id="btn-ver">VER DETALLES</button></a>
+                    <a><button onclick="AnimacionAgregar();" class="agregacion agregar-carrito btn-c-v" id="btn-carrito" th:data-id="${producto.idProducto}">AGREGAR AL CARRITO</button></a>
+                </div>
+            </article>
+
+            <!-- ********************* TORTAS GRANDES *********************-->
+            <article id="tortas-cumple" style="display: none">
+                <div class="carta" th:each="producto: ${productosP}" th:if="${producto.idCategoria == 9}">
+                    <div class="img-transition">
+                        <img th:src="@{'/IMAGENES/'+${producto.imagenProducto}}" th:alt="${producto.imagenProducto}" />
+                        <div class="capa">
+                            <button>COMPRAR</button>
+                        </div>
+                    </div>
+                    <h3 th:text="${producto.nombreProducto}" th:title="${producto.nombreProducto}"></h3>
+                    <h2 class="precio">S/<span th:text="${producto.precioProducto}"></span></h2>
+                    <a th:href="@{/Producto/InfoTortaPersonalizada/}+${producto.idProducto}"><button class="btn-c-v"
+                            id="btn-ver">VER DETALLES</button></a>
+                    <a><button onclick="AnimacionAgregar();" class="agregacion agregar-carrito btn-c-v" id="btn-carrito" th:data-id="${producto.idProducto}">AGREGAR AL CARRITO</button></a>
+                </div>
+            </article>
+
+            <!--******************* TORTAS CUADRADAS ************************-->
+
+            <article id="tortas-infantil" style="display: none">
+                <div class="carta" th:each="producto: ${productosP}" th:if="${producto.idCategoria == 10}">
+                    <div class="img-transition">
+                        <img th:src="@{'/IMAGENES/'+${producto.imagenProducto}}" th:alt="${producto.imagenProducto}" />
+                        <div class="capa">
+                            <button>COMPRAR</button>
+                        </div>
+                    </div>
+                    <h3 th:text="${producto.nombreProducto}" th:title="${producto.nombreProducto}"></h3>
+                    <h2 class="precio">S/<span th:text="${producto.precioProducto}"></span></h2>
+                    <a th:href="@{/Producto/InfoTortaPersonalizada/}+${producto.idProducto}"><button class="btn-c-v"
+                            id="btn-ver">VER DETALLES</button></a>
+                    <a><button onclick="AnimacionAgregar();" class="agregacion agregar-carrito btn-c-v" id="btn-carrito" th:data-id="${producto.idProducto}">AGREGAR AL CARRITO</button></a>
+                </div>
+            </article>
+
+            <!--********************* TORTAS CIRCULARES *************************-->
+
+            <article id="tortas-quince" style="display: none">
+                <div class="carta" th:each="producto: ${productosP}" th:if="${producto.idCategoria == 11}">
+                    <div class="img-transition">
+                        <img th:src="@{'/IMAGENES/'+${producto.imagenProducto}}" th:alt="${producto.imagenProducto}" />
+                        <div class="capa">
+                            <button>COMPRAR</button>
+                        </div>
+                    </div>
+                    <h3 th:text="${producto.nombreProducto}" th:title="${producto.nombreProducto}"></h3>
+                    <h2 class="precio">S/<span th:text="${producto.precioProducto}"></span></h2>
+                    <a th:href="@{/Producto/InfoTortaPersonalizada/}+${producto.idProducto}"><button class="btn-c-v"
+                            id="btn-ver">VER DETALLES</button></a>
+                    <a><button onclick="AnimacionAgregar();" class="agregacion agregar-carrito btn-c-v" id="btn-carrito" th:data-id="${producto.idProducto}">AGREGAR AL CARRITO</button></a>
+                </div>
+            </article>
+        </div>
+    </main>
+    <footer class="pt-1 mt-5 text-center text-lg-start text-muted letrass" style="background-color: #a66832">
+        <section class=""></section>
+        <section class="">
+            <div class="footer-f container text-center text-md-start mt-5">
+                <div class="row mt-3">
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="subletra text-uppercase fw-bold mb-4">Clientes</h6>
+                        <p>
+                            <a href="../login"
+                                class="subtexto text-reset text-decoration-none bi bi-person-circle"><span>Mi
+                                    Cuenta</span></a>
+                        </p>
+                        <p>
+                            <a href="../pedidosR"
+                                class="subtexto text-reset text-decoration-none bi-bag-plus-fill"><span>Pedidos</span></a>
+                        </p>
+                        <p>
+                            <a a href="../carritodecomprasR"
+                                class="subtexto text-reset text-decoration-none bi bi-cart-plus-fill"><span>Carrito de
+                                    Compra</span></a>
+                        </p>
+                        <p>
+                            <a href="../finalizarcompraR"
+                                class="subtexto text-reset text-decoration-none bi bi-cart-check-fill"><span>Finalizar
+                                    Compra</span></a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <h6 class="subletra text-uppercase fw-bold mb-4">Informacion</h6>
+                        <p>
+                            <a href="../nosotrosR"
+                                class="subtexto text-reset text-decoration-none bi bi-people-fill"><span>Nosotros</span></a>
+                        </p>
+                        <p>
+                            <a href="../galeriaR"
+                                class="subtexto text-reset text-decoration-none bi bi-image"><span>Galeria</span></a>
+                        </p>
+                        <p>
+                            <a href="../contactosR"
+                                class="subtexto text-reset text-decoration-none bi bi-telephone-inbound-fill"><span>Contactanos</span></a>
+                        </p>
+                        <p>
+                            <a href="../politicasdeprivacidadR"
+                                class="subtexto text-reset text-decoration-none bi bi-shield-fill"><span>Politica de
+                                    Privacidad</span></a>
+                        </p>
+                        <p>
+                            <a href="../terminosycondicionesR"
+                                class="subtexto text-reset text-decoration-none bi bi-lock-fill"><span>Terminos y
+                                    Condiciones</span></a>
+                        </p>
+                        <p>
+                            <a href="#"
+                                class="subtexto text-reset text-decoration-none bi bi-geo-alt-fill"><span>Direccion</span></a>
+                        </p>
+                    </div>
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="subletra text-uppercase fw-bold mb-4">Contactanos</h6>
+                        <p>
+                            <a href="#!" class="subtexto text-reset text-decoration-none"><span>Whatsapp</span></a>
+                        </p>
+                        <p>
+                            <a href="#!" class="subtexto text-reset text-decoration-none"><span>Correo</span></a>
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <h6 class="subletra text-uppercase fw-bold mb-4">
+                            Contactanos Directo
+                        </h6>
+                        <p>
+                            <a href="https://web.whatsapp.com/"
+                                class="subtexto text-reset text-decoration-none bi bi-whatsapp">+51 952-252-835</a>
+                        </p>
+                        <p>
+                            <a href="mailto:pasteleriarocio07@gmail.com"
+                                class="subtexto text-reset text-decoration-none bi bi-envelope-fill">pasteleriarocio7@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="footer-f text-center p-4" style="background-color: #a66832">
+            <a class="text-reset fw-bold text-decoration-none" href="#"></a>
+        </div>
+    </footer>
+    <div class="footer-f textsub text-center p-4" style="background-color: rgb(130, 73, 33); height: 100px">
+        Desarrollado por el Grupo © 2022 Copyright:
+        <a class="text-reset fw-bold text-decoration-none" href="#">Pasteleria Rocio</a>
+    </div>
+    <a class="whatsapp"  href="https://web.whatsapp.com/">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a class="carritodecomprasR">
+        <i class="fa-solid fa-cart-plus"></i>
+    </a>
+    
+    <script src="/js/VAgregarCarrito.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/carritoR.js"></script>
+    <script src="/js/pedidoR.js"></script>
+    <script src="/js/compraR.js"></script>
+    <script src="https://kit.fontawesome.com/59a2028302.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+</html>
